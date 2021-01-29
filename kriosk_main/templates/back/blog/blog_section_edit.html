@@ -1,0 +1,64 @@
+{% extends 'back/master_back.html' %}
+
+{% load static %}
+
+
+    {% block headblock %}
+
+    {% endblock %}
+
+    
+    
+    {% block page_content %}
+
+    <div class="container">
+        <div class="container">
+
+            <div class="row layout-top-spacing">
+                
+                <!-- add -->
+                <div id="ftFormArray" class="col-lg-6 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Section Edit</h4>
+                                </div>          
+                            </div>
+                        </div>
+                        <div class="widget-content widget-content-area custom-autocomplete h-100">
+
+                            {% if blog_section %}
+
+                            <form action="{% url 'blog_section_edit' section_pk=blog_section.pk %}" method="post" id="quillForm1" name="quillForm1" enctype="multipart/form-data" class="form-horizontal">
+                                {% csrf_token %}
+
+                                <div class="form-group mb-4">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Section Name" value="{{blog_section.name}}">
+                                    <small id="emailHelp1" class="form-text text-muted mb-4" style="margin-left: 5px;">Keep it small case.</small>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary mt-3">Edit</button>
+
+                            </form>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+
+    {% block footerblock  %}
+
+    {% endblock %}
+                

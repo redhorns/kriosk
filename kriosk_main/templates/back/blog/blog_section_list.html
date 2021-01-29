@@ -1,0 +1,147 @@
+{% extends 'back/master_back.html' %}
+
+{% load static %}
+
+
+    {% block headblock %}
+
+    {% endblock %}
+
+    
+    
+    {% block page_content %}
+
+    <div class="container">
+        <div class="container">
+
+            <div class="row layout-top-spacing">
+
+                <!-- list -->
+                <div id="tableDropdown" class="col-lg-6 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Section List</h4>
+                                </div>          
+                            </div>
+                        </div>
+
+                        {% if messages %}
+                            {% for message in messages %}
+                                <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin: 10px 20px;">
+                                    <strong>Voila, </strong> {{message}}
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <div class="widget-content widget-content-area">
+                            <div class="table-responsive">
+                                <table class="table table-bordered mb-4" style="margin-bottom: 150px !important;">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Index</th>
+                                            <th class="text-center">Section Name</th>
+                                            <th class="text-center">Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        {% for blog_section in blog_section %}
+
+                                        <tr>
+                                            <td class="text-center">{{blog_section.index}}</td>
+                                            <td class="text-center">{{blog_section.name | title}}</td>
+                                            <td class="text-center">
+                                                
+                                                <div class="dropdown custom-dropdown">
+                                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+                                                    </a>
+
+                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink1">
+                                                        <a class="dropdown-item" href="{% url 'blog_section_edit' section_pk=blog_section.pk %}">Edit</a>
+                                                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#section_{{blog_section.pk}}">Delete</a>
+
+                                                    </div>
+
+                                                    <!-- Delete Confirm -->
+                                                    <div class="modal fade bottom" id="section_{{blog_section.pk}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="opacity: 1;">
+                                                        <div class="modal-dialog modal-frame modal-bottom" role="document">
+                                                            <div class="modal-content">
+                                                                <div class="modal-body">
+                                                                    <div class="row d-flex justify-content-center align-items-center">
+                
+                                                                        <p class="pt-3 pr-2">
+                                                                        This action will delete the Blog Section <b>"{{blog_section.name}}"</b> completely and it is
+                                                                        irreparable by nature. Once it is gone it is gone !
+                                                                        </p>
+                
+                                                                        <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Close</button>
+                                                                        <a href="{% url 'blog_section_delete' section_pk=blog_section.pk %}"><button type="button" class="btn btn-dark"><b>Delete</b></button></a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+
+                                            </td>
+                                        </tr>
+
+                                        {% endfor %}
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- add -->
+                <div id="ftFormArray" class="col-lg-6 col-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Section Add</h4>
+                                </div>          
+                            </div>
+                        </div>
+                        <div class="widget-content widget-content-area custom-autocomplete h-100">
+
+                            <form action="{% url 'blog_section_add' %}" method="post" id="quillForm1" name="quillForm1" enctype="multipart/form-data" class="form-horizontal">
+                                {% csrf_token %}
+
+                                <div class="form-group mb-4">
+                                    <label for="name">Name</label>
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Section Name">
+                                    <small id="emailHelp1" class="form-text text-muted mb-4" style="margin-left: 5px;">Keep it small case.</small>
+                                </div>
+                                
+                                <button type="submit" class="btn btn-primary mt-3">Add</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+
+    {% block footerblock  %}
+
+    {% endblock %}
+                

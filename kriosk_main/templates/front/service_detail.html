@@ -1,0 +1,487 @@
+{% extends 'front/master_front.html' %}
+
+{% load static %}
+
+
+
+{% block headblock %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
+    <script>document.documentElement.className = document.documentElement.className + ' yes-js js_active js'</script>
+    <title>Spacing it Easier to Get Things Done. &#8211; Ohio Theme</title>
+    <link rel='dns-prefetch' href='http://s.w.org/' />
+    <link rel="alternate" type="application/rss+xml" title="Ohio Theme &raquo; Feed" href="../../feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Ohio Theme &raquo; Comments Feed" href="../../comments/feed/index.html" />
+    <link rel="alternate" type="application/rss+xml" title="Ohio Theme &raquo; Spacing it Easier to Get Things Done. Comments Feed" href="feed/index.html" />
+    <script type="text/javascript">
+        window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ohio.clbthemes.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+        !function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
+    </script>
+    <style type="text/css">
+        img.wp-smiley,
+        img.emoji {
+        display: inline !important;
+        border: none !important;
+        box-shadow: none !important;
+        height: 1em !important;
+        width: 1em !important;
+        margin: 0 .07em !important;
+        vertical-align: -0.1em !important;
+        background: none !important;
+        padding: 0 !important;
+        }
+    </style>
+    <style id='woocommerce-inline-inline-css' type='text/css'>
+        .woocommerce form .form-row .required { visibility: visible; }
+    </style>
+    <link rel='stylesheet' id='sb_instagram_styles-css'  href='{% static "front/css/sbi-styles.min61da.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='wphb-1-css'  href='{% static "front/css/hummingbird/871060fd3bd021a295b193e460296aad.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='wp-editor-font-css'  href='https://fonts.googleapis.com/css?family=Noto+Serif%3A400%2C400i%2C700%2C700i&amp;ver=5.6' type='text/css' media='all' />
+    <link rel='stylesheet' id='wphb-2-css'  href='{% static "front/css/hummingbird/f94fb74c1b1f723ec8e9e44cd607bafc.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='wphb-3-css'  href='{% static "front/css/hummingbird/57e161d97aadcec56e64a98b93cdfd00.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='wc-block-style-css'  href='{% static "front/css/hummingbird/683345c54fa3f45b75f4038182811d2b.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='wphb-4-css'  href='{% static "front/css/hummingbird/aa55e85dd370734c71b2c16bd3568fad.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='woocommerce_prettyPhoto_css-css'  href='{% static "front/css/hummingbird/a9fda4e703242b591153a39ec944deec.css" %}' type='text/css' media='all' />
+    <link rel='stylesheet' id='wphb-5-css'  href='{% static "front/css/hummingbird/d5d329c46fdf2a1364b01f2ae060b053.css" %}' type='text/css' media='all' />
+    <style id='wphb-5-inline-css' type='text/css'>
+        .brand-color,.brand-color-i,.brand-color-hover-i:hover,.brand-color-hover:hover,.has-brand-color-color,.is-style-outline .has-brand-color-color,a:hover,.blog-grid:not(.blog-grid-type-2):not(.blog-grid-type-4):hover h3 a,.portfolio-item.grid-2:hover h4.title,.fullscreen-nav li a:hover,.socialbar.inline a:hover,.gallery .expand .ion:hover,.close .ion:hover,.accordionItem_title:hover,.tab .tabNav_link:hover,.widget .socialbar a:hover,.social-bar .socialbar a:hover,.share-bar .links a:hover,.widget_shopping_cart_content .buttons a.button:first-child:hover,span.page-numbers.current,a.page-numbers:hover,.main-nav .nav-item.active-main-item > .menu-link,.comment-content a,.page-headline .subtitle b:before,nav.pagination li .page-numbers.active,#mega-menu-wrap > ul .sub-menu > li > a:hover,#mega-menu-wrap > ul .sub-sub-menu > li > a:hover,#mega-menu-wrap > ul > .current-menu-ancestor > a,#mega-menu-wrap > ul .sub-menu:not(.sub-menu-wide) .current-menu-ancestor > a,#mega-menu-wrap > ul .current-menu-item > a,#fullscreen-mega-menu-wrap > ul .current-menu-ancestor > a,#fullscreen-mega-menu-wrap > ul .current-menu-item > a,.woocommerce .woo-my-nav li.is-active a,.portfolio-sorting li a.active,.widget_nav_menu .current-menu-item > a,.widget_pages .current-menu-item > a,.portfolio-item-fullscreen .portfolio-details-date:before,.btn.btn-link:hover,.blog-grid-content .category-holder:after,.clb-page-headline .post-meta-estimate:before,.comments-area .comment-date-and-time:after,.post .entry-content a:not(.wp-block-button__link),.project-page-content .date:before,.pagination li .btn.active,.pagination li .btn.current,.pagination li .page-numbers.active,.pagination li .page-numbers.current,.category-holder:not(.no-divider):after,.inline-divider:after,.clb-hamburger-nav .menu .nav-item:hover > a.menu-link .ion,.clb-hamburger-nav .menu .nav-item .visible > a.menu-link .ion,.clb-hamburger-nav .menu .nav-item.active > a.menu-link .ion,.clb-hamburger-nav .menu .sub-nav-item:hover > a.menu-link .ion,.clb-hamburger-nav .menu .sub-nav-item .visible > a.menu-link .ion,.clb-hamburger-nav .menu .sub-nav-item.active > a.menu-link .ion,.widgets a,.widgets a *:not(.fab),.pricing:hover .pricing_price_title,.btn-link:focus, a.btn-link:focus,.btn-link:active, a.btn-link:active,.pricing_list_item .ion,a.highlighted,.woocommerce .woocommerce-privacy-policy-text a,.blog-grid-type-6 .category-holder a.category{color:#d90a2c;}.brand-border-color,.brand-border-color-hover,.has-brand-color-background-color,.is-style-outline .has-brand-color-color,.wp-block-button__link:hover,.custom-cursor .circle-cursor--outer,.btn-brand, .btn:not(.btn-link):hover,.btn-brand:active, .btn:not(.btn-link):active,.btn-brand:focus, .btn:not(.btn-link):focus,a.button:hover,button.button:hover,.pricing:hover .btn.btn-brand{border-color:#d90a2c;}.brand-bg-color,.brand-bg-color-after,.brand-bg-color-before,.brand-bg-color-hover,.brand-bg-color-i,.brand-bg-color-hover-i,.btn-brand:not(.btn-outline),.has-brand-color-background-color,a.brand-bg-color,.wp-block-button__link:hover,.widget_price_filter .ui-slider-range,.widget_price_filter .ui-slider-handle:after,.main-nav .nav-item:before,.main-nav .nav-item.current-menu-item:before,.widget_calendar caption,.tag:not(.tag-portfolio):hover,.page-headline .tags .tag,.radio input:checked + .input:after,.menu-list-details .tag,.custom-cursor .circle-cursor--inner,.custom-cursor .circle-cursor--inner.cursor-link-hover,.btn-round:before,.btn:not(.btn-link):hover,.btn:not(.btn-link):active,.btn:not(.btn-link):focus,button.button:not(.btn-link):hover,a.button:not(.btn-link):hover,.btn.btn-flat:hover,.btn.btn-flat:focus,.btn.btn-outline:hover,nav.pagination li .btn.active:hover,.tag:not(body):hover,.tag-cloud-link:hover,.pricing_price_time:hover,.pricing:hover .btn.btn-brand{background-color:#d90a2c;}.site-header:not(.header-fixed):not(.mobile-header) .menu > li > a,.site-header:not(.header-fixed) .menu-optional .cart-total a,.site-header:not(.header-fixed) .menu-optional > li > a,.site-header:not(.header-fixed) .select-styled,.site-header:not(.header-fixed) .menu-optional .btn-round-light:not(.clb-close) .ion,.site-header:not(.header-fixed) .clb-hamburger .ion,.site-header .menu-blank,.site-branding{color:#ffffff;}.site-header{border:none;}.site-header.header-fixed{border:none;}#masthead .btn-optional{background-color:#4200ff;border-color:#4200ff;}.clb-back-link,.clb-back-link .arrow-icon{color:#ffffff;}.clb-page-headline::after{background-color:transparent;}.header-wrap.page-container{max-width:1300px}.clb-scroll-top:not(.light-typo):not(.dark-typo),.clb-scroll-top:hover,.clb-scroll-top:not(.light-typo):not(.dark-typo) .font-titles{color:#ffffff;}.clb-subscribe-img{background-image:url('{% static "fornt/images/oh__img114-768x451.jpg" %}');background-size:cover;background-position:center center;background-repeat:no-repeat;}.site-footer{background-color:#17161a;color:rgba(255,255,255,0.8);}.site-footer,.site-footer .widgets a,.site-footer .btn-flat{color:rgba(255,255,255,0.8);}.site-footer .widget-title{color:#8b8a8d;}body{}{}h1,h2,h3,h4,h5,h6,.box-count,.font-titles,.fullscreen-nav .menu-link,.clb-hamburger-nav .menu .nav-item a,.site-header.mobile-header .main-nav .nav-item,.btn, .button, a.button, input[type="submit"], a.btn-link,.widget_shopping_cart_content .mini-cart-description .mini-cart-item-title > a,.woo-c_product_name > a:not(.woo-c_product_category),.socialbar.inline a,.vc_row .vc-bg-side-text,.counter-box-count{}.countdown-box .box-time .box-count,.chart-box-pie-content{}.countdown-box .box-time .box-count,.chart-box-pie-content{}.countdown-box .box-time .box-count,.chart-box-pie-content{}.portfolio-item-2 h4{}p.subtitle,.subtitle-font,.heading .subtitle{}{}.contact-form.classic input::-webkit-input-placeholder,.contact-form.classic textarea::-webkit-input-placeholder,input.classic::-webkit-input-placeholder,input.classic::-moz-placeholder{}.contact-form.classic input::-moz-placeholder,.contact-form.classic textarea::-moz-placeholder{}input.classic:-ms-input-placeholder,.contact-form.classic input:-ms-input-placeholder,.contact-form.classic textarea:-ms-input-placeholder{}.clb-social{color:#ffffff;}/*Custom font*/@import url("http://hello.myfonts.net/count/3b259e");@font-face {font-family: 'HelveticaNeueLTPro-BdEx';src: url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/3B259E_0_0.eot');src: url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/3B259E_0_0.eot?#iefix') format('embedded-opentype'),url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/3B259E_0_0.woff2') format('woff2'),url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/3B259E_0_0.woff') format('woff'),url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/3B259E_0_0.ttf') format('truetype');}.clb-hamburger-nav.centered .menu .nav-item a,.clb-hamburger-nav.centered .menu .sub-nav-item a,.clb-hamburger-nav.type3 .menu .nav-item a,.clb-hamburger-nav.type3 .menu .sub-nav-item a{font-family: HelveticaNeueLTPro-BdEx;font-weight: normal;font-style: normal;}/*Custom font*/@font-face {font-family: 'Space Grotesk Bold';src: url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/SpaceGrotesk-Bold.woff2') format('woff2'),url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/SpaceGrotesk-Bold.woff') format('woff');font-weight: bold;font-style: normal;}@font-face{font-family:'blacker_pro_display-bold';src:url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/blacker_pro_display-bold-webfont.woff2') format('woff2'),url('https://colabrio.ams3.cdn.digitaloceanspaces.com/webfonts/blacker_pro_display-bold-webfont.woff') format('woff');font-weight: bold;font-style: normal;}/*Custom blog grid*/.blog-grid-type-2 .blog-grid-content .btn {margin: 0px;}/*Project page spacers*/@media screen and (min-width: 1440px) {.project-page.layout-type3 .project-page-content {margin-left: 3vw;margin-right: 8vw;}}/*Custom Widget*/#custom_html-17 {padding: 20px;border-radius: 8px;overflow: hidden;background-color: #0d1adb;font-size: 14px;margin-top: 50px;}#custom_html-17 * {color: rgba(255, 255, 255, .85);}#custom_html-17 img {margin-left: -20px;margin-bottom: -20px;vertical-align: top;max-width: calc(100% + 40px);border-radius: 0px 0px 8px 8px;}#custom_html-17 h3.widget-title {margin-bottom: 15px;font-weight: 600;color: #fff;font-size: 20px;line-height: 1.4;}/*New label*/.nav-item:nth-child(2) li:nth-child(1) li:nth-child(7) span:after,.nav-item:nth-child(2) li:nth-child(1) li:nth-child(9) span:after,.nav-item:nth-child(2) li:nth-child(1) li:nth-child(10) span:after,.nav-item:nth-child(3) li:nth-child(2) li:nth-child(4) span:after,.nav-item:nth-child(3) li:nth-child(2) li:nth-child(9) span:after,.nav-item:nth-child(3) li:nth-child(3) li:nth-child(9) span:after,.nav-item:nth-child(3) li:nth-child(1) li:nth-child(6) span:after,.nav-item:nth-child(3) li:nth-child(1) li:nth-child(7) span:after,.nav-item:nth-child(4) li:nth-child(2) li:nth-child(5) span:after,.nav-item:nth-child(4) li:nth-child(2) li:nth-child(6) span:after,.nav-item:nth-child(6) li:nth-child(1) li:nth-child(6) span:after,.nav-item:nth-child(6) li:nth-child(2) li:nth-child(6) span:after {content:"NEW";border-radius:4px;margin:-2px 0 0 6px;padding:0 5px;height:18px;line-height:18px;display:inline-block;font-size:10px;font-weight:700;color:#fff;background-color:#d90a2c;} @media screen and (min-width:1025px){} @media screen and (min-width:769px) and (max-width:1024px){} @media screen and (max-width:768px){.woo_c-product .breadcrumbs {display: none;}.woo_c-product .clb-share-bar {top: 100px;}.single-product .icon-box-title {font-size: 16px !important;}}
+    </style>
+    <link rel='stylesheet' id='sccss_style-css'  href='../../indexfae3.html?sccss=1&amp;ver=5.6' type='text/css' media='all' />
+    <script type='text/javascript' src='{% static "front/" %}js/jquery.min9d52.js?ver=3.5.1' id='jquery-core-js'></script>
+    <script type='text/javascript' src='{% static "front/" %}js/jquery-migrate.mind617.js?ver=3.3.2' id='jquery-migrate-js'></script>
+    <script type='text/javascript' src='../../wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min44fd.js?ver=2.70' id='jquery-blockui-js'></script>
+    <script type='text/javascript' id='wc-add-to-cart-js-extra'>
+        /* <![CDATA[ */
+        var wc_add_to_cart_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_view_cart":"View cart","cart_url":"https:\/\/ohio.clbthemes.com\/cart\/","is_cart":"","cart_redirect_after_add":"no"};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/" %}js/add-to-cart.min287d.js?ver=4.8.0' id='wc-add-to-cart-js'></script>
+    <script type='text/javascript' src='{% static "front/" %}js/woocommerce-add-to-carte6df.js?ver=6.5.0' id='vc_woocommerce-add-to-cart-js-js'></script>
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="../../xmlrpc0db0.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 5.6" />
+    <meta name="generator" content="WooCommerce 4.8.0" />
+    <link rel="canonical" href="index.html" />
+    <link rel='shortlink' href='../../index7666.html?p=18274' />
+    <link rel="alternate" type="application/json+oembed" href="../../wp-json/oembed/1.0/embed509a.json?url=https%3A%2F%2Fohio.clbthemes.com%2Fproject%2Fspacing-it-easier-to-get-things-done%2F" />
+    <link rel="alternate" type="text/xml+oembed" href="../../wp-json/oembed/1.0/embeda98e?url=https%3A%2F%2Fohio.clbthemes.com%2Fproject%2Fspacing-it-easier-to-get-things-done%2F&amp;format=xml" />
+    <noscript>
+        <style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
+    </noscript>
+    <meta name="generator" content="Powered by WPBakery Page Builder - drag and drop page builder for WordPress."/>
+    <link rel="icon" href="{% static 'front/images/cropped-Favicon_512x512-5-32x32.png' %}" sizes="32x32" />
+    <link rel="icon" href="{% static 'front/images/cropped-Favicon_512x512-5-192x192.png' %}" sizes="192x192" />
+    <link rel="apple-touch-icon" href="{% static 'front/images/cropped-Favicon_512x512-5-180x180.png' %}" />
+    <meta name="msapplication-TileImage" content="https://colabrio.ams3.cdn.digitaloceanspaces.com/ohio.clbthemes.com/cropped-Favicon_512x512-5-270x270.png" />
+    <style type="text/css" data-type="vc_shortcodes-custom-css">.vc_custom_1602679157369{background-color: #1a191d !important;}.vc_custom_1602679164291{background-color: #1a191d !important;}.vc_custom_1602679172169{background-color: #1a191d !important;}.vc_custom_1602679178503{background-color: #17161a !important;}.vc_custom_1602679186311{background-color: #17161a !important;}.vc_custom_1577184525214{background-color: rgba(136,136,136,0.05) !important;*background-color: rgb(136,136,136) !important;}.vc_custom_1577184538793{background-color: rgba(136,136,136,0.05) !important;*background-color: rgb(136,136,136) !important;}.vc_custom_1602679194316{background-color: #17161a !important;}.vc_custom_1571825015432{background-color: #17161a !important;}.vc_custom_1602679201645{background-color: #17161a !important;}.vc_custom_1602679207933{background-color: #17161a !important;}.vc_custom_1602679215240{background-color: #17161a !important;}.vc_custom_1577184648755{border-bottom-width: 1px !important;background-color: rgba(136,136,136,0.05) !important;*background-color: rgb(136,136,136) !important;border-bottom-color: rgba(136,136,136,0.1) !important;border-bottom-style: solid !important;}</style>
+    <noscript>
+        <style> .wpb_animate_when_almost_visible { opacity: 1; }</style>
+    </noscript>
+
+{% endblock %}
+
+
+
+
+
+
+{% block page_content %}
+
+<div class="project-page project layout-type5 top-offset bottom-offset">
+    <div class="project-page-media-holder">
+        <div class="project-fullscreen-slider" data-portfolio-grid-slider data-slider-navigation="" data-slider-loop="1" data-slider-autoplay="1" data-slider-autoplay-time="5000" data-slider-pagination=&quot;true&quot;>
+            <div class=parallax data-parallax-bg=vertical data-parallax-speed=.5>
+                <div class="project-image parallax-bg" 
+                    style="background-image:url('images/new/Brand.gif')" 
+                    alt="">
+                    <div class="project-image-overlay"></div>
+                </div>
+            </div>
+            <div class=parallax data-parallax-bg=vertical data-parallax-speed=.5>
+                <div class="project-image parallax-bg" 
+                    style="background-image:url('images/new/Brand.gif')" 
+                    alt="">
+                    <div class="project-image-overlay"></div>
+                </div>
+            </div>
+        </div>
+        <div class="ohio-video-module-sc video-module with-animation open-popup" data-video-module="https://www.youtube.com/embed/t67_zAg5vvI">
+            <div class="btn-play btn-round " tabindex='1'>
+                <i class="ion ion-ios-play"></i>
+            </div>
+        </div>
+        <div class="page-container">
+            <div class="clb-share-bar">
+                <div class="socialbar socialbar-horizontal flat">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fohio.clbthemes.com%2Fproject%2Fspacing-it-easier-to-get-things-done%2F" class="facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span class="social-text">Facebook</span>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?text=Spacing+it+Easier+to+Get+Things+Done.,+https%3A%2F%2Fohio.clbthemes.com%2Fproject%2Fspacing-it-easier-to-get-things-done%2F" class="twitter">
+                    <i class="fab fa-twitter"></i>
+                    <span class="social-text">Twitter</span>
+                    </a>
+                    <a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fohio.clbthemes.com%2Fproject%2Fspacing-it-easier-to-get-things-done%2F&amp;description=Spacing+it+Easier+to+Get+Things+Done." class="pinterest">
+                    <i class="fab fa-pinterest"></i>
+                    <span class="social-text">Pinterest</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page-container  clb__light_section">
+        <div class="project-page-content">
+            <div class="vc_row">
+                <div class="vc_col-md-5">
+                    <div class="category-holder">
+                        <span class="category"><a href="../../portfolio-category/strategy/index.html">Strategy</a></span>
+                        <span class="category"><a href="../../portfolio-category/ui-ux/index.html">UI/UX</a></span>
+                    </div>
+                    <span class="date">June 3, 2019</span>
+                    <div class="project-title">
+                        <h2 class="headline">Spacing it Easier to Get Things Done.</h2>
+                    </div>
+                    <div class="project-description">
+                        <p>We’ve created <strong>a unique visual system and strategy</strong> across the wide existing spectrum of visible mobile applications and found yourself in a wide, <a href="#">straggling</a> with wainscots.</p>
+                    </div>
+                    <a href="https://1.envato.market/5Q25j" class="btn btn-link" target="_blank">
+                        Open Project                            
+                        <i class="ion-right ion">
+                            <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
+                            </svg>
+                        </i>
+                    </a>
+                </div>
+                <div class="vc_col-md-push-1 vc_col-md-6">
+                    <div class="project-task">
+                        <h6 class="heading-sm">Task</h6>
+                        <p class="project-task-description">Rebuild a unified visual system for the advertising agency, made of steel which can change the world in a while.</p>
+                    </div>
+                    <ul class="project-meta">
+                        <li>
+                            <h6 class="project-meta-title">Strategy</h6>
+                            <p>Brand Strategy, UX Strategy</p>
+                        </li>
+                        <li>
+                            <h6 class="project-meta-title">Design</h6>
+                            <p>UI/UX Design, Art Direction</p>
+                        </li>
+                        <li>
+                            <h6 class="project-meta-title">Client</h6>
+                            <p>Envato</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="page-container ">
+    <div class="project-page-custom-content">
+
+        <!--  vc_custom_1602679157369 -->
+        <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_row-has-fill">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
+                        <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-4">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001bcf847057">
+                                            <p class="subtitle">
+                                                Challenge		
+                                            </p>
+                                            <h3 class="title subtitle-top">
+                                                Make a web presence for the leader fin-tech company.	
+                                            </h3>
+                                        </div>
+                                        <div class="vc_empty_space  vc_hidden-sm vc_hidden-md vc_hidden-lg"   style="height: 20px"><span class="vc_empty_space_inner"></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-2">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+                            <div class="wpb_column vc_column_container vc_col-sm-5 vc_col-xs-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="ohio-text-sc " 
+                                            id="ohio-custom-6001bcf84745c" 
+                                            >
+                                            <p><strong>Colabrio believes</strong> a team of creatives who are excited about unique ideas and help digital and fin-tech companies. <strong>But structure were from</strong> the funny the century rather, initial all the made, have spare to negatives, and at <strong>applications</strong> it want and evils was about written as epic intro.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="vc_row-full-width vc_clearfix"></div>
+        <!--  vc_custom_1602679164291 -->
+        <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_row-has-fill">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="vc_empty_space  clb__spacer"   style="height: 50px"><span class="vc_empty_space_inner"></span></div>
+                        <div class="ohio-gallery-sc clb-gallery gallery-wrap"
+                            id="ohio-custom-6001bcf849d0b"
+                            data-gallery="ohio-custom-6001bcf849d09"
+                            >
+                            <div class="vc_row ohio-masonry" data-lazy-container="gallery">
+                                <div class=" vc_col-lg-6 vc_col-md-6 vc_col-xs-6 minimal-grid masonry-block grid-item gallery-image cursor-as-pointer" data-cursor-class="cursor-link" data-gallery-item="0" data-lazy-item="" data-lazy-scope="gallery">
+                                    <div class="grid-item-container">
+                                        <div class="grid-image-holder">
+                                            <img class="gimg hidden-image" src="{% static 'front/images/oh__img9.jpg' %}" alt="Alt">
+                                        </div>
+                                        <div class="grid-item-overlay overlay with-title"></div>
+                                        <div class="clb-gallery-img-details">
+                                            <h5 class="title">Alt Impulsados por pasión</h5>
+                                            <p class="caption">ƒ/5.6 • 135.0 mm • 1/200 (640) • Flash (off, did not fire)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" vc_col-lg-6 vc_col-md-6 vc_col-xs-6 minimal-grid masonry-block grid-item gallery-image cursor-as-pointer" data-cursor-class="cursor-link" data-gallery-item="1" data-lazy-item="" data-lazy-scope="gallery">
+                                    <div class="grid-item-container">
+                                        <div class="grid-image-holder">
+                                            <img class="gimg hidden-image" src="{% static 'front/images/oh__img10.jpg' %}" alt="Alt">
+                                        </div>
+                                        <div class="grid-item-overlay overlay with-title"></div>
+                                        <div class="clb-gallery-img-details">
+                                            <h5 class="title">Sistema de diseño único</h5>
+                                            <p class="caption">ƒ/5.6 • 135.0 mm • 1/200 (640) • Flash (off, did not fire)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" vc_col-lg-6 vc_col-md-6 vc_col-xs-6 minimal-grid masonry-block grid-item gallery-image cursor-as-pointer" data-cursor-class="cursor-link" data-gallery-item="2" data-lazy-item="" data-lazy-scope="gallery">
+                                    <div class="grid-item-container">
+                                        <div class="grid-image-holder">
+                                            <img class="gimg hidden-image" src="{% static 'front/images/oh__img4.jpg' %}" alt="Alt">
+                                        </div>
+                                        <div class="grid-item-overlay overlay with-title"></div>
+                                        <div class="clb-gallery-img-details">
+                                            <h5 class="title">Alt Impulsados por pasión</h5>
+                                            <p class="caption"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class=" vc_col-lg-6 vc_col-md-6 vc_col-xs-6 minimal-grid masonry-block grid-item gallery-image cursor-as-pointer" data-cursor-class="cursor-link" data-gallery-item="3" data-lazy-item="" data-lazy-scope="gallery">
+                                    <div class="grid-item-container">
+                                        <div class="grid-image-holder">
+                                            <img class="gimg hidden-image" src="{% static 'front/images/oh__img2.jpg' %}" alt="Alt">
+                                        </div>
+                                        <div class="grid-item-overlay overlay with-title"></div>
+                                        <div class="clb-gallery-img-details">
+                                            <h5 class="title">Sistema de diseño único</h5>
+                                            <p class="caption"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ohio-gallery-opened-sc clb-popup clb-gallery-lightbox" 
+                            id="ohio-custom-6001bcf849d09" 
+                            data-options='{"navClass":""}'>
+                            <div class="close close-bar">
+                                <div class="clb-close btn-round round-animation circle-animation">
+                                    <i class="ion ion-md-close"></i>
+                                </div>
+                                <div class="expand btn-round round-animation circle-animation vc_hidden-xs">
+                                    <i class="ion ion-md-expand"></i>
+                                </div>
+                            </div>
+                            <div class="clb-popup-holder"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="vc_row-full-width vc_clearfix"></div>
+        <!--  vc_custom_1602679172169 -->
+        <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_row-has-fill">
+            <div class="wpb_column vc_column_container vc_col-sm-12">
+                <div class="vc_column-inner">
+                    <div class="wpb_wrapper">
+                        <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
+                        <div class="vc_row wpb_row vc_inner vc_row-fluid">
+                            <div class="wpb_column vc_column_container vc_col-sm-12">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper">
+                                        <div class="ohio-compare-sc compare-shortcode clb__border_radius" 
+                                            id="ohio-custom-6001bcf84aed7" 
+                                            data-compare-before-label="Before" 
+                                            data-compare-after-label="After" 
+                                            data-compare-position="0.5" 
+                                            data-compare-orientation="horizontal"	 
+                                            >
+                                            <img src="{% static 'front/images/SingleProject8_DesktopInverse-1024x585.jpg' %}" srcset="" sizes="(max-width: 1024px) 100vw, 1024px" alt="Before"  />
+                                            <img src="{% static 'front/images/SingleProject8_Desktop-1024x585.jpg' %}" srcset="" sizes="(max-width: 1024px) 100vw, 1024px" alt="After"  />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        
+        <div class="vc_row-full-width vc_clearfix"></div>
+        
+    </div>
+</div>
+<div class="clb-back-link vc_hidden-md vc_hidden-sm vc_hidden-xs">
+    <a href="../../index.html" class="btn-round btn-round-light">
+        <i class="ion-left ion">
+            <svg class="arrow-icon arrow-icon-back" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
+            </svg>
+        </i>
+    </a>
+    <span class="clb-back-link-caption">
+    Back    </span>
+</div>
+<div class="sticky-nav">
+    <div class="sticky-nav-image"
+        style="background-image: url({% static 'front/images/oh__img191-1920x1222.jpg' %});"		>
+    </div>
+    <div class="sticky-nav-holder">
+        <div class="sticky-nav_item">
+            <h6 class="heading-sm">
+                Next Project			
+            </h6>
+            <div class="nav-holder">
+                <a href="../diseno-grafico-para-tu-hermosa-casa/index.html" class="btn-round btn-round-small btn-round-light dark-mode-reset">
+                    <i class="ion">
+                        <svg class="arrow-icon arrow-icon-back" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </i>
+                </a>
+                <a href="../unica-bowls-from-the-south-pacific/index.html" class="btn-round btn-round-small btn-round-light dark-mode-reset">
+                    <i class="ion">
+                        <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </i>
+                </a>
+            </div>
+        </div>
+        <a href="../unica-bowls-from-the-south-pacific/index.html">
+            <h5 class="sticky-nav_heading">
+                Única Bowls From the South Pacific.			
+            </h5>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+{% block footerblock  %}
+
+<a class="search-global btn-round btn-round-light fixed btn-round-light vc_hidden-md vc_hidden-sm vc_hidden-xs" tabindex="1" data-nav-search="true">
+    <i class="icon ion ion-md-search brand-color-hover-i"></i>
+    </a>
+    <!-- <style type="text/css">#ohio-custom-6001bcf847057 h3{color:#ffffff;}#ohio-custom-6001bcf847057 p.subtitle{color:#6a696c;text-transform:uppercase;}#ohio-custom-6001bcf84745c,#ohio-custom-6001bcf84745c > *{font-size:17px;line-height:28px;color:#ffffff;}#ohio-custom-6001bcf849d0b .gallery-image{padding:20px;}#ohio-custom-6001bcf84b746 h3{color:#ffffff;}#ohio-custom-6001bcf84b746 p.subtitle{color:#6a696c;text-transform:uppercase;}#ohio-custom-6001bcf84bac3,#ohio-custom-6001bcf84bac3 > *{font-size:17px;line-height:28px;color:#ffffff;}#ohio-custom-6001bcf84c26d .tabNav_link{color:#ffffff;}#ohio-custom-6001bcf84c26d .tabNav .tabNav_line{background-color:#d90a2c;}#ohio-custom-6001bcf84e732 p.subtitle{color:#555555;text-transform:uppercase;}#ohio-custom-6001bcf84ea1b,#ohio-custom-6001bcf84ea1b > *{font-size:17px;line-height:28px;}#ohio-custom-6001bcf84f005 > .clb-slider-outer-stage {margin: 0 -0px;}#ohio-custom-6001bcf84f005 > .clb-slider-outer-stage > .clb-slider-stage {left: 0px;}#ohio-custom-6001bcf850c15 .parallax-bg{background-image:url('images/oh__img6.jpg');}#ohio-custom-6001bcf8514e1 h3{color:#ffffff;}#ohio-custom-6001bcf8514e1 p.subtitle{color:#555555;text-transform:uppercase;}#ohio-custom-6001bcf8517bf,#ohio-custom-6001bcf8517bf > *{font-size:17px;line-height:28px;color:#ffffff;}#ohio-custom-6001bcf8534c2,#ohio-custom-6001bcf8534c2 > *{font-size:17px;line-height:28px;color:#ffffff;}#ohio-custom-6001bcf8537e6.progress-bar h6{color:#ffffff;}#ohio-custom-6001bcf8537e6.progress-bar .percent{color:#ffffff;}#ohio-custom-6001bcf8537e6 .progress-bar-track {background-color:rgba(255,255,255,0.1);}#ohio-custom-6001bcf853c6e.counter-box .counter-box-count{color:#ffffff;}#ohio-custom-6001bcf853c6e.counter-box .counter-box-icon{color:#555555;}#ohio-custom-6001bcf853c6e.counter-box .counter-box-headline{color:#ffffff;}#ohio-custom-6001bcf853f83.counter-box .counter-box-count{color:#ffffff;}#ohio-custom-6001bcf853f83.counter-box .counter-box-icon{color:#555555;}#ohio-custom-6001bcf853f83.counter-box .counter-box-headline{color:#ffffff;}#ohio-custom-6001bcf854a85 h3{color:#ffffff;}#ohio-custom-6001bcf854a85 p.subtitle{color:#6a696c;text-transform:uppercase;}#ohio-custom-6001bcf8554c2,#ohio-custom-6001bcf8554c2 > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf855b2b,#ohio-custom-6001bcf855b2b > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf8561f3,#ohio-custom-6001bcf8561f3 > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf8565f6,#ohio-custom-6001bcf8565f6 > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf856df4,#ohio-custom-6001bcf856df4 > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf8575b2 h3{color:#ffffff;}#ohio-custom-6001bcf8575b2 p.subtitle{color:#6a696c;text-transform:uppercase;}#ohio-custom-6001bcf85778d,#ohio-custom-6001bcf85778d > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf85784f,#ohio-custom-6001bcf85784f > *{line-height:26px;color:#ffffff;}#ohio-custom-6001bcf8579d6,#ohio-custom-6001bcf8579d6 > *{line-height:26px;color:#ffffff;}#ohio-custom-6001bcf857aec,#ohio-custom-6001bcf857aec > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf857b61,#ohio-custom-6001bcf857b61 > *{line-height:26px;color:#ffffff;}#ohio-custom-6001bcf857d9a,#ohio-custom-6001bcf857d9a > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf857e2b,#ohio-custom-6001bcf857e2b > *{line-height:26px;color:#ffffff;}#ohio-custom-6001bcf857f37,#ohio-custom-6001bcf857f37 > *{line-height:26px;color:#ffffff;}#ohio-custom-6001bcf858156,#ohio-custom-6001bcf858156 > *{font-size:15px;line-height:24px;color:#6a696c;}#ohio-custom-6001bcf8581d2,#ohio-custom-6001bcf8581d2 > *{line-height:26px;color:#ffffff;}#ohio-custom-6001bcf858b7d p.subtitle{text-transform:uppercase;}#ohio-custom-6001bcf859bda,#ohio-custom-6001bcf859bda > *{font-size:17px;line-height:28px;}</style>
+    Instagram Feed JS -->
+    <script type="text/javascript">
+        var sbiajaxurl = "../../wp-admin/admin-ajax.html";
+    </script>
+
+    <script type="text/template" id="tmpl-unavailable-variation-template">
+        <p>Sorry, this product is unavailable. Please choose a different combination.</p>
+    </script>
+    <link rel='stylesheet' id='wphb-6-css'  href='{% static "front/css/hummingbird/6e6a599dbeb0e1a0a564ea883ad25a51.css" %}' type='text/css' media='all' />
+    <script type='text/javascript' src='{% static "front/js/jquery.selectBox.min7359.js" %}' id='jquery-selectBox-js'></script>
+    <script type='text/javascript' id='jquery-yith-wcwl-js-extra'>
+        /* <![CDATA[ */
+        var yith_wcwl_l10n = {"ajax_url":"\/wp-admin\/admin-ajax.php","redirect_to_cart":"no","multi_wishlist":"","hide_add_button":"1","enable_ajax_loading":"","ajax_loader_url":"https:\/\/ohio.clbthemes.com\/wp-content\/plugins\/yith-woocommerce-wishlist\/assets\/images\/ajax-loader-alt.svg","remove_from_wishlist_after_add_to_cart":"1","is_wishlist_responsive":"1","time_to_close_prettyphoto":"3000","fragments_index_glue":".","reload_on_found_variation":"1","labels":{"cookie_disabled":"We are sorry, but this feature is available only if cookies on your browser are enabled.","added_to_cart_message":"<div class=\"woocommerce-notices-wrapper\"><div class=\"woocommerce-message\" role=\"alert\">Product added to cart successfully<\/div><\/div>"},"actions":{"add_to_wishlist_action":"add_to_wishlist","remove_from_wishlist_action":"remove_from_wishlist","reload_wishlist_and_adding_elem_action":"reload_wishlist_and_adding_elem","load_mobile_action":"load_mobile","delete_item_action":"delete_item","save_title_action":"save_title","save_privacy_action":"save_privacy","load_fragments":"load_fragments"}};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/jquery.yith-wcwld4e0.js" %}' id='jquery-yith-wcwl-js'></script>
+    <script type='text/javascript' id='contact-form-7-js-extra'>
+        /* <![CDATA[ */
+        var wpcf7 = {"apiSettings":{"root":"https:\/\/ohio.clbthemes.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"cached":"1"};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/scripts9dff.js" %}' id='contact-form-7-js'></script>
+    <script type='text/javascript' src='{% static "front/js/js.cookie.min6b25.js" %}' id='js-cookie-js'></script>
+    <script type='text/javascript' id='woocommerce-js-extra'>
+        /* <![CDATA[ */
+        var woocommerce_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%"};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/woocommerce.min287d.js" %}' id='woocommerce-js'></script>
+    <script type='text/javascript' id='wc-cart-fragments-js-extra'>
+        /* <![CDATA[ */
+        var wc_cart_fragments_params = {"ajax_url":"\/wp-admin\/admin-ajax.php","wc_ajax_url":"\/?wc-ajax=%%endpoint%%","cart_hash_key":"wc_cart_hash_d1b0f6a6518fb275d1e003d130276c45","fragment_name":"wc_fragments_d1b0f6a6518fb275d1e003d130276c45","request_timeout":"5000"};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/cart-fragments.min287d.js" %}' id='wc-cart-fragments-js'></script>
+    <script type='text/javascript' src='{% static "front/js/jquery.prettyPhoto.min005e.js" %}' id='prettyPhoto-js'></script>
+    <script type='text/javascript' src='{% static "front/js/wp-embed.min40df.js" %}' id='wp-embed-js'></script>
+    <script type='text/javascript' src='{% static "front/js/js_composer_front.mine6df.js" %}' id='wpb_composer_front_js-js'></script>
+    <script type='text/javascript' src='{% static "front/js/imagesloaded.mineda1.js" %}' id='imagesloaded-js'></script>
+    <script type='text/javascript' src='{% static "front/js/masonry.min3a05.js" %}' id='masonry-js'></script>
+    <script type='text/javascript' src='{% static "front/js/jquery.masonry.minef70.js" %}' id='jquery-masonry-js'></script>
+    <script type='text/javascript' src='{% static "front/js/jquery.clb-slider40df.js" %}' id='ohio-slider-js'></script>
+    <script type='text/javascript' src='{% static "front/js/jquery.mega-menu.min40df.js" %}' id='jquery-mega-menu-js'></script>
+    <script type='text/javascript' src='{% static "front/js/comment-reply.min40df.js" %}' id='comment-reply-js'></script>
+    <script type='text/javascript' src='{% static "front/js/jquery.event.move.min8a54.js" %}' id='jquery-event-move-js'></script>
+    <script type='text/javascript' src='{% static "front/js/jquery.twentytwenty.min8a54.js" %}' id='jquery-twentytwenty-js'></script>
+    <script type='text/javascript' src='{% static "front/js/underscore.min4511.js" %}' id='underscore-js'></script>
+    <script type='text/javascript' id='wp-util-js-extra'>
+        /* <![CDATA[ */
+        var _wpUtilSettings = {"ajax":{"url":"\/wp-admin\/admin-ajax.php"}};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/wp-util.min40df.js" %}' id='wp-util-js'></script>
+    <script type='text/javascript' id='wc-add-to-cart-variation-js-extra'>
+        /* <![CDATA[ */
+        var wc_add_to_cart_variation_params = {"wc_ajax_url":"\/?wc-ajax=%%endpoint%%","i18n_no_matching_variations_text":"Sorry, no products matched your selection. Please choose a different combination.","i18n_make_a_selection_text":"Please select some product options before adding this product to your cart.","i18n_unavailable_text":"Sorry, this product is unavailable. Please choose a different combination."};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/add-to-cart-variation.min287d.js" %}' id='wc-add-to-cart-variation-js'></script>
+    <script type='text/javascript' id='ohio-main-js-extra'>
+        /* <![CDATA[ */
+        var ohioVariables = {"url":"https:\/\/ohio.clbthemes.com\/wp-admin\/admin-ajax.php","view_cart":"View Cart","add_to_cart_message":"has been added to the cart","cart_page":"https:\/\/ohio.clbthemes.com\/cart\/","subscribe_popup_enable":"1","subscribe_popup_type":"time","subscribe_popup_var":"5","notification_enable":"1","notification_expires":"1","save_color_mode_state":""};
+        /* ]]> */
+    </script>
+    <script type='text/javascript' src='{% static "front/js/main254d.js" %}' id='ohio-main-js'></script>
+    <script type='text/javascript'>
+        document.tidioChatCode = "mnyb5ewvl1osjuly79vgor0ks4tusv10";
+        (function() {
+          function asyncLoad() {
+            var tidioScript = document.createElement("script");
+            tidioScript.type = "text/javascript";
+            tidioScript.async = true;
+            tidioScript.src = "{% static 'front/js/render.42c0d66b33e45751ff47.js' %}";
+            document.body.appendChild(tidioScript);
+          }
+          if (window.attachEvent) {
+            window.attachEvent("onload", asyncLoad);
+          } else {
+            window.addEventListener("load", asyncLoad, false);
+          }
+        })();
+    </script>
+
+{% endblock %}
