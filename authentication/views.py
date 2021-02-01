@@ -164,6 +164,8 @@ def myactivation_initiate(request) :
                 email_send.content_subtype = 'html'
                 email_send.send()
 
+                return redirect('myactivation_end')
+
             else :
                 msg = "Failed due to internal error, Try registering again or contact us !"
                 messages.success(request, msg)

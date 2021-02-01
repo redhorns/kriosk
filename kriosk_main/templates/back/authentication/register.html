@@ -28,7 +28,8 @@
                     <div class="form-content">
 
                         <h1 class="">Register for <a href="{% url 'home' %}"><span class="brand-name">KRIOSK</span></a></h1>
-                        <p class="signup-link">Already have account ? <a href="{% url 'mylogin' %}">Sign in</a></p>
+                        <p class="signup-link" style="margin-bottom: 10px;">Already have account ? <a href="{% url 'mylogin' %}">Sign in</a></p>
+                        <p class="signup-link">Account not activated? <a href="{% url 'myactivation_initiate' %}">Activate Account</a></p>
 
                         {% if messages %}
                             {% for message in messages %}
