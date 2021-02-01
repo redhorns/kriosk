@@ -16,6 +16,8 @@ urlpatterns = [
     url(r'^panel/blog_section/edit/(?P<section_pk>\d+)/$', views.blog_section_edit, name='blog_section_edit'),
     url(r'^panel/blog_section/delete/(?P<section_pk>\d+)/$', views.blog_section_delete, name='blog_section_delete'),
 
+    url(r'^panel/blog/search/$', views.blog_back_search, name='blog_back_search'),
+
 
 
     url(r'^panel/temp/$', views.temp, name='temp'),

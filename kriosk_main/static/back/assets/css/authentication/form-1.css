@@ -176,7 +176,7 @@ body {
     width: 50%;
 }
 .form-image .l-image {
-    background-image: url(../../../../../../../cdn.pixabay.com/photo/2015/12/10/16/39/shield-1086703_960_720.png);
+    /* background-image: url(../../../../../../../cdn.pixabay.com/photo/2015/12/10/16/39/shield-1086703_960_720.png); */
     position: absolute;
     top: 0;
     left: 0;
@@ -185,7 +185,7 @@ body {
     background-color: #060818;
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 75%;
+    background-size: cover;
     background-position-x: center;
     background-position-y: center;
 }

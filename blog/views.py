@@ -6,15 +6,28 @@ import datetime
 from django.utils.safestring import mark_safe
 import json
 from django.core.files.storage import default_storage
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from itertools import chain
 
 
 def blog_list(request):
 
-    blog = Blog.objects.all()
+    blogs = Blog.objects.all().order_by('-index')
+    
+    page = request.GET.get('page')
+    paginator = Paginator(blogs, 5)
+
+    try :
+        blog = paginator.page(page)
+    except PageNotAnInteger :
+        blog = paginator.page(1)
+    except EmptyPage :
+        blog = paginator.page(paginator.num_pages)
 
 
     send = {
         'blog': blog,
+        'count': blogs.count(),
     }
 
     return render(request, 'back/blog/blog_list.html', send)
@@ -210,6 +223,7 @@ def blog_edit(request, blog_pk) :
 
 
 
+
 def blog_delete(request, blog_pk) :
 
     # checking : if blog exists
@@ -234,6 +248,37 @@ def blog_delete(request, blog_pk) :
 
     return redirect('blog_list')
 
+
+
+
+def blog_back_search(request) :
+
+    search = request.GET.get('search', '')
+
+    if search :
+
+        blogs = Blog.objects.filter(title__contains=search).order_by("-index")
+
+        paginator = Paginator(blogs, 2)
+        page = request.GET.get('page')
+
+        try:
+            blog = paginator.get_page(page)
+        except PageNotAnInteger:
+            blog = paginator.page(1)
+        except EmptyPage:
+            blog = paginator.page(paginator.num_pages)
+        
+
+        send = {
+            'blog': blog,
+            'search': search,
+        }
+
+        return render(request, 'back/blog/blog_search.html', send)
+
+    else :
+        return HttpResponse("You're in else section !")
 
 
 

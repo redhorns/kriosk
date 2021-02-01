@@ -7,6 +7,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('kriosk_main.urls')),
     url(r'', include('blog.urls')),
+    url(r'', include('authentication.urls')),
 ]
 
 
