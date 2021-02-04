@@ -1,0 +1,372 @@
+{% extends 'back/master_back.html' %}
+
+{% load static %}
+
+
+    {% block headblock %}
+
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+
+    <!-- bootstrap for tags -->
+    <style>
+        .bootstrap-tagsinput {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+            display: block;
+            padding: 4px 6px;
+            color: #555;
+            vertical-align: middle;
+            border-radius: 4px;
+            max-width: 100%;
+            line-height: 32px;
+            cursor: text;
+        }
+        .bootstrap-tagsinput input {
+            border: none;
+            box-shadow: none;
+            outline: none;
+            background-color: transparent;
+            padding: 5px 16px;
+            margin: 0;
+            width: auto;
+            max-width: inherit;
+        }
+        .bootstrap-tagsinput .tag {
+            background: gray;
+            border: 1px solid;
+            padding: 0 6px;
+            margin-right: 2px;
+            color: white;
+            border-radius: 4px;
+            }
+    </style>
+
+    <!-- smartphoto -->
+    <link rel="stylesheet" href="{% static 'back/plugins/smartphoto/smartphoto.min.css' %}">
+
+    {% endblock %}
+
+    
+    
+    {% block page_content %}     
+
+    <div class="container">
+        <div class="container">
+
+            <!-- <div id="navSection" data-spy="affix" class="nav  sidenav">
+                <div class="sidenav-content">
+                    <a href="#ftFormArray" class="active nav-link">Form with Array</a>
+                    <a href="#ftFormTwoArray" class="nav-link">Form with Two Array</a>
+                    <a href="#ftSimpleAutocomplete" class="nav-link">Simple Autocomplete</a>
+                    <a href="#ftCustomSuggestion" class="nav-link">Custom Suggestion</a>
+                </div>
+            </div> -->
+
+            <div class="row layout-top-spacing">
+                
+                <div id="ftFormArray" class="col-lg-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">  
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Service Edit</h4>
+                                </div>          
+                            </div>
+                        </div>
+
+                        <div class="widget-content widget-content-area custom-autocomplete h-100">
+
+                            {% if service %}
+                            <form onsubmit="myFunction()" action="{% url 'back_service_edit' service_pk=service.pk %}" method="post" id="quillForm1" name="quillForm1" enctype="multipart/form-data" class="form-horizontal">
+                                {% csrf_token %}
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-3">
+                                        <label for="index">Index</label>
+                                        <input type="number" id="index" name="index" value="{{service.index}}" required>
+                                        <!-- have to initiate the TouchSpin -->
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_name">Service Name</label>
+                                        <input type="text" class="form-control" id="service_name" name="service_name" placeholder="Web Dev ..." value="{{service.service_name}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_intro">Service Intro</label>
+                                        <input type="text" class="form-control" id="service_intro" name="service_intro" placeholder="Wannakkam to the KRIOSK ..." value="{{service.service_intro}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_detail">Service Detail</label>
+                                        <textarea class="form-control" name="service_detail" id="service_detail" cols="30" rows="7" placeholder="Back then in 1998 ..." required>{{service.service_detail}}</textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-8">
+                                        <label for="service_list">Service List</label>
+                                        <input type="text" id="service_list" name="service_list" placeholder="Designing, Development, ..." class="form-control" data-role="tagsinput" value="{{service.service_list}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="image1" style="margin-bottom: 0px;">Image ( page : about )</label>
+                                        
+                                        <!-- selected -->
+                                        <h6 class="mt-2">Selected : &nbsp;&nbsp; 
+                                            {% if service.image1 %}
+                                            <a href="{{service.image1.url}}" class="js-smartPhoto" data-caption="" >
+                                                <img src="{{service.image1.url}}" alt="service_image" style="height: 50px; border-radius: 10%;">
+                                            </a>
+                                            {% else %}
+                                                <h6>None</h6>
+                                            {% endif %}
+                                        </h6>
+
+                                        <div class="custom-file-container" data-upload-id="myFirstImage">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                                            <label class="custom-file-container__custom-file" >
+                                                <input type="file" name="image1" id="image1" class="custom-file-container__custom-file__custom-file-input">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                            </label>
+                                            <div class="custom-file-container__image-preview"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group col-md-6">
+                                        <label for="image2" style="margin-bottom: 0px;">Image ( page : list )</label>
+                                        
+                                        <!-- selected -->
+                                        <h6 class="mt-2">Selected : &nbsp;&nbsp; 
+                                            {% if service.image1 %}
+                                            <a href="{{service.image1.url}}" class="js-smartPhoto" data-caption="" >
+                                                <img src="{{service.image1.url}}" alt="service_image" style="height: 50px; border-radius: 10%;">
+                                            </a>
+                                            {% else %}
+                                                <h6>None</h6>
+                                            {% endif %}
+                                        </h6>
+
+                                        <div class="custom-file-container" data-upload-id="mySecondImage">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                                            <label class="custom-file-container__custom-file" >
+                                                <input type="file" name="image2" id="image2" class="custom-file-container__custom-file__custom-file-input">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                            </label>
+                                            <div class="custom-file-container__image-preview"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="form-row mb-4">
+
+                                    <div class="form-group col-md-6">
+                                        <label for="image_before" style="margin-bottom: 0px;">Before Image</label>
+                                        
+                                        <!-- selected -->
+                                        <h6 class="mt-2">Selected : &nbsp;&nbsp; 
+                                            {% if service.image_before %}
+                                            <a href="{{service.image_before.url}}" class="js-smartPhoto" data-caption="" >
+                                                <img src="{{service.image_before.url}}" alt="service_image" style="height: 50px; border-radius: 10%;">
+                                            </a>
+                                            {% else %}
+                                                <h6>None</h6>
+                                            {% endif %}
+                                        </h6>
+
+                                        <div class="custom-file-container" data-upload-id="myThirdImage">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                                            <label class="custom-file-container__custom-file" >
+                                                <input type="file" name="image_before" id="image_before" class="custom-file-container__custom-file__custom-file-input">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                            </label>
+                                            <div class="custom-file-container__image-preview"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <label for="image_after" style="margin-bottom: 0px;">After Image</label>
+
+                                        <!-- selected -->
+                                        <h6 class="mt-2">Selected : &nbsp;&nbsp; 
+                                            {% if service.image_after %}
+                                            <a href="{{service.image_after.url}}" class="js-smartPhoto" data-caption="" >
+                                                <img src="{{service.image_after.url}}" alt="service_image" style="height: 50px; border-radius: 10%;">
+                                            </a>
+                                            {% else %}
+                                                <h6>None</h6>
+                                            {% endif %}
+                                        </h6>
+
+                                        <div class="custom-file-container" data-upload-id="myFourthImage">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                                            <label class="custom-file-container__custom-file" >
+                                                <input type="file" name="image_after" id="image_after" class="custom-file-container__custom-file__custom-file-input">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                            </label>
+                                            <div class="custom-file-container__image-preview"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <!-- <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="image_wide">Wide Image</label>
+                                        <label class="switch s-dark mr-2" style="margin-left: 30px; margin-bottom: -3px;">
+                                            <input type="checkbox" id="image_wide" name="image_wide" value="True">
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div> -->
+                            
+                                <button type="submit" class="btn btn-primary mt-3">Edit Service</button>
+
+                            </form>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+    {% block footerblock  %}
+
+    <!-- smartphoto -->
+    <script src="{% static 'back/plugins/smartphoto/smartphoto.min.js' %}"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded',function(){
+            new SmartPhoto(".js-smartPhoto");
+        });
+    </script>
+
+    <!-- for tags -->
+    <script src="{% static 'back/bootstrap/js/bootstrap-tagsinput.js' %}"></script>
+
+    <script>
+        //First upload
+        var firstUpload = new FileUploadWithPreview('myFirstImage')
+        //Second upload
+        var firstUpload = new FileUploadWithPreview('mySecondImage')
+        //Third upload
+        var firstUpload = new FileUploadWithPreview('myThirdImage')
+        //Fourth upload
+        var firstUpload = new FileUploadWithPreview('myFourthImage')
+    </script>
+    
+    <!-- quill js -->
+    <script type="text/javascript">
+
+        // < ==========  1  ========== >
+        var quill1 = new Quill('#editor-container1', {
+        modules: {
+            toolbar: [
+            [{ header: [1, 2, false] }],
+            ['bold', 'italic', 'underline'],
+            ['link', 'blockquote', 'image', 'code-block'],
+            [{ list: 'ordered' }, { list: 'bullet' }]
+            ]
+        },
+        placeholder: 'Compose an epic...',
+        theme: 'snow'  // or 'bubble'
+        });
+
+
+        function myFunction() {
+
+            var text1html = quill1.root.innerHTML;
+
+            var detail1 = document.getElementById('detail1');
+
+            detail1.value = text1html;
+        
+        }
+
+        $("input[name='index']").TouchSpin({
+            verticalbuttons: true,
+            buttondown_class: "btn btn-classic btn-outline-info",
+            buttonup_class: "btn btn-classic btn-outline-danger"
+        });
+
+
+
+        // handling form
+        // var preciousContent = document.getElementById('detail1');
+
+        // javascript events "".on"
+        // quill.on('text-change', function() {
+        //     var text = quill.getText();
+        //     var justHtml = quill.root.innerHTML;
+
+        //     preciousContent.value = text;
+
+        //     console.log(text);
+        //     console.log(preciousContent);
+        // });
+
+        // var quill = new Quill('#editor-container1', {
+        //     modules: {
+        //         toolbar: [
+        //         [{ header: [1, 2, false] }],
+        //         ['bold', 'italic', 'underline'],
+        //         ['link', 'blockquote', 'image', 'code-block'],
+        //         [{ list: 'ordered' }, { list: 'bullet' }]
+        //         ]
+        //     },
+        //         placeholder: 'Compose an epic...',
+        //         theme: 'snow'  // or 'bubble'
+        // });
+
+
+        // function myFunction() {
+
+        //     var text = quill.getText();
+        //     var justHtml = quill.root.innerHTML;
+
+        //     preciousContent.value = text;
+
+        //     console.log(text);
+        //     console.log(preciousContent);
+
+        //     alert("Success Baby !")
+            
+        // }
+
+
+    </script>
+
+    {% endblock %}

@@ -924,7 +924,8 @@
     function handleSubscribeContactForm() {
         // Button
         $('.contact-form').each(function () {
-            var submit = $(this).find('[type="submit"]');
+            // contact form updates
+            var submit = $(this).find('[type="submitt"]');
             var button = $(this).find('[data-contact-btn] button');
 
             if (submit.length) {

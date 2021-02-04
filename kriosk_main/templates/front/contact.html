@@ -591,7 +591,7 @@
         
         .clb-page-headline .bg-image {
             background-color: rgba(34, 119, 91, 0.05);
-            background-image:url('{% static "front/images/oh__img93.jpg" %}');
+            background-image:url('{% static "front/images/image/oh__img93.jpg" %}');
             background-size: auto;
             background-position: center center;
             background-repeat: repeat;
@@ -611,7 +611,7 @@
         }
         
         .clb-subscribe-img {
-            background-image:url('{% static "front/images/disc.jpg" %}');
+            background-image:url('{% static "front/images/image/disc.jpg" %}');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -1007,7 +1007,7 @@
         }
         
         .clb-subscribe-img {
-            background-image:url('{% static "front/images/disc.jpg" %}');
+            background-image:url('{% static "front/images/image/disc.jpg" %}');
             background-size: cover;
             background-position: center center;
             background-repeat: no-repeat;
@@ -1272,13 +1272,14 @@
                     <div class="post-meta">
                     </div>
                     <h1 class="clb-title">Contact: Agency</h1>
-                    <div class="clb-post-meta">Leave us a little info, and we’ll be in touch. <br> <a class="btn btn-small btn-brand" href="#">Send Us an Email</a></div>
+                    <div class="clb-post-meta">Leave us a little info, and we’ll be in touch. <br> <a class="btn btn-small btn-brand" href="#contact--form">Send Us an Email</a></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
+<!-- breadcrumb -->
 <div class="breadcrumbs">
     <div class="page-container">
         <div class="vc_row">
@@ -1287,13 +1288,25 @@
                 <div class="vc_col-md-12">
                     <ol class="breadcrumbs-slug" itemscope itemtype="http://schema.org/BreadcrumbList">
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a><i class="ion ion-ios-arrow-forward"></i>
+                            <a itemprop="item" href="../index.html">
+                                <span itemprop="name">Home</span>
+                            </a>
+                            <i class="ion ion-ios-arrow-forward"></i>
                             <meta itemprop="position" content="1" />
                         </li>
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                             <span itemprop="name" class="active">Contact: Agency</span>
                             <meta itemprop="position" content="2" />
                         </li>
+                        {% if messages %}
+                            {% for message in messages %}
+                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                    <i class="ion ion-ios-arrow-forward"></i>
+                                    <span itemprop="name" class="active" style="background-color: blanchedalmond;">Message : {{message}}</span>
+                                    <meta itemprop="position" content="2" />
+                                </li>
+                            {% endfor %}
+                        {% endif %}
                     </ol>
                 </div>
             </div>
@@ -1307,32 +1320,32 @@
             <main id="main" class="site-main">
                 <article id="post-19459" class="post-19459 page type-page status-publish has-post-thumbnail hentry">
                     <div class="entry-content">
+                        
                         <div class="vc_row wpb_row vc_row-fluid">
+
                             <div class="wpb_column vc_column_container vc_col-sm-4">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
-                                        <div class="ohio-heading-sc heading text-left"
-                                            id="ohio-custom-6001b1e6006bb" 
-                                            >
+
+                                        <!-- title -->
+                                        <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001b1e6006bb">
                                             <h4 class="title">
                                                 Get in touch	
                                             </h4>
                                         </div>
+
+
                                         <div class="vc_row wpb_row vc_inner vc_row-fluid">
                                             <div class="wpb_column vc_column_container vc_col-sm-6">
                                                 <div class="vc_column-inner">
                                                     <div class="wpb_wrapper">
-                                                        <div class="ohio-text-sc " 
-                                                            id="ohio-custom-6001b1e600d34" 
-                                                            >
+                                                        <div class="ohio-text-sc" id="ohio-custom-6001b1e600d34">
                                                             <p>Work Inquiries<br />
                                                                 <strong>+1.809.120.6705</strong>
                                                             </p>
                                                         </div>
-                                                        <div class="vc_empty_space"   style="height: 5px"><span class="vc_empty_space_inner"></span></div>
-                                                        <div class="ohio-text-sc " 
-                                                            id="ohio-custom-6001b1e600fbb" 
-                                                            >
+                                                        <div class="vc_empty_space" style="height: 5px"><span class="vc_empty_space_inner"></span></div>
+                                                        <div class="ohio-text-sc " id="ohio-custom-6001b1e600fbb">
                                                             <p>Assistance hours:<br />
                                                                 Monday &#8211; Friday<br />
                                                                 6 am to 8 pm EST
@@ -1341,51 +1354,22 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="wpb_column vc_column_container vc_col-sm-6">
-                                                <div class="vc_column-inner">
-                                                    <div class="wpb_wrapper">
-                                                        <div class="ohio-text-sc " 
-                                                            id="ohio-custom-6001b1e601154" 
-                                                            >
-                                                            <p>Careers &amp; Press<br />
-                                                                <strong>+1.809.120.4590</strong>
-                                                            </p>
-                                                        </div>
-                                                        <div class="vc_empty_space"   style="height: 5px"><span class="vc_empty_space_inner"></span></div>
-                                                        <div class="ohio-text-sc " 
-                                                            id="ohio-custom-6001b1e60126c" 
-                                                            >
-                                                            <p>Assistance hours:<br />
-                                                                Wednesday &#8211; Saturday<br />
-                                                                6 am to 8 pm EST
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="wpb_column vc_column_container vc_col-sm-2">
-                                <div class="vc_column-inner">
-                                    <div class="wpb_wrapper"></div>
-                                </div>
-                            </div>
+
                             <div class="wpb_column vc_column_container vc_col-sm-3">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="vc_empty_space  clb__spacer vc_hidden-lg vc_hidden-md vc_hidden-sm"   style="height: 30px"><span class="vc_empty_space_inner"></span></div>
-                                        <div class="ohio-heading-sc heading text-left"
-                                            id="ohio-custom-6001b1e601681" 
-                                            >
+                                        <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001b1e601681">
                                             <h4 class="title">
                                                 Post address	
                                             </h4>
                                         </div>
-                                        <div class="ohio-text-sc " 
-                                            id="ohio-custom-6001b1e60170d" 
-                                            >
+                                        <div class="ohio-text-sc" id="ohio-custom-6001b1e60170d">
                                             <p>541 Melville Ave, Palo Alto,<br />
                                                 CA 94301,<br />
                                                 United States
@@ -1394,20 +1378,23 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="wpb_column vc_column_container vc_col-sm-1">
+                                <div class="vc_column-inner">
+                                    <div class="wpb_wrapper"></div>
+                                </div>
+                            </div>
+
                             <div class="wpb_column vc_column_container vc_col-sm-3">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="vc_empty_space  clb__spacer vc_hidden-lg vc_hidden-md vc_hidden-sm"   style="height: 30px"><span class="vc_empty_space_inner"></span></div>
-                                        <div class="ohio-heading-sc heading text-left"
-                                            id="ohio-custom-6001b1e60198a" 
-                                            >
+                                        <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001b1e60198a">
                                             <h4 class="title">
                                                 Social media	
                                             </h4>
                                         </div>
-                                        <div class="ohio-text-sc " 
-                                            id="ohio-custom-6001b1e601a1e" 
-                                            >
+                                        <div class="ohio-text-sc " id="ohio-custom-6001b1e601a1e">
                                             <p><strong><a href="#">Facebook</a></strong><br />
                                                 <strong><a href="#">Instagram</a></strong><br />
                                                 <strong><a href="#">Twitter</a></strong>
@@ -1416,7 +1403,9 @@
                                     </div>
                                 </div>
                             </div>
+
                         </div>
+
                         <div class="vc_row wpb_row vc_row-fluid">
                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                 <div class="vc_column-inner">
@@ -1428,81 +1417,130 @@
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Form -->
                         <div class="vc_row wpb_row vc_row-fluid">
                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
-                                        <div class="ohio-contact-from-sc contact-form  text-left"
-                                            id="ohio-custom-6001b1e602ab1" 
-                                            >
-                                            <div role="form" class="wpcf7" id="wpcf7-f18-p19459-o1" lang="en-US" dir="ltr">
+                                        <div class="ohio-contact-from-sc contact-form  text-left">
+                                            <div role="form" class="" id="" lang="en-US" dir="ltr">
+                                                
                                                 <div class="screen-reader-response">
                                                     <p role="status" aria-live="polite" aria-atomic="true"></p>
                                                     <ul></ul>
                                                 </div>
-                                                <form action="https://ohio.clbthemes.com/contact-us-ver4/#wpcf7-f18-p19459-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
-                                                    <div style="display: none;">
-                                                        <input type="hidden" name="_wpcf7" value="18" />
-                                                        <input type="hidden" name="_wpcf7_version" value="5.3.2" />
-                                                        <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                                                        <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f18-p19459-o1" />
-                                                        <input type="hidden" name="_wpcf7_container_post" value="19459" />
-                                                        <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+
+                                                <form action="{% url 'contact_back' %}" method="post">
+                                                    {% csrf_token %}
+                                                    
+                                                    <!-- name -->
+                                                    <div class="vc_col-lg-4 vc_col-sm-12" style="padding: 10px;">
+                                                        <label> Name <br />
+                                                            <span class="wpcf7-form-control-wrap your-name">
+                                                                <input type="text" name="name" id="name" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name" />
+                                                            </span> 
+                                                        </label>
                                                     </div>
-                                                    <div class="vc_col-lg-4 vc_col-sm-12">
-                                                        <label> Name (required)<br />
-                                                        <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name" /></span> </label>
+
+                                                    <!-- email -->
+                                                    <div class="vc_col-lg-4 vc_col-sm-12" style="padding: 10px;">
+                                                        <label> Email <br />
+                                                            <span class="wpcf7-form-control-wrap company-name">
+                                                                <input type="email" name="email" id="email" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your working email" />
+                                                            </span>
+                                                        </label>
                                                     </div>
-                                                    <div class="vc_col-lg-4 vc_col-sm-12">
-                                                        <label> Company (required)<br />
-                                                        <span class="wpcf7-form-control-wrap company-name"><input type="text" name="company-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your company name" /></span> </label>
+
+                                                    <!-- phone -->
+                                                    <div class="vc_col-lg-4 vc_col-sm-12" style="padding: 10px;">
+                                                        <label> Contact No. <br />
+                                                            <span class="wpcf7-form-control-wrap your-email">
+                                                                <input type="tel" name="phone" id="phone" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="i.e. +91 8511881646" />
+                                                            </span>
+                                                        </label>
                                                     </div>
-                                                    <div class="vc_col-lg-4 vc_col-sm-12">
-                                                        <label> Email (required)<br />
-                                                        <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your working email" /></span> </label>
-                                                    </div>
-                                                    <div class="vc_col-lg-4 vc_col-sm-12">
-                                                        <label> Phone (optional)<br />
-                                                        <span class="wpcf7-form-control-wrap your-phone"><input type="tel" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="Your actual phone number" /></span> </label>
-                                                    </div>
-                                                    <div class="vc_col-lg-4 vc_col-sm-12">
-                                                        <label> Subject (optional)<br />
-                                                        <span class="wpcf7-form-control-wrap subject"><input type="text" name="subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Choose a subject" /></span> </label>
-                                                    </div>
-                                                    <div class="vc_col-lg-4 vc_col-sm-12">
+
+                                                    <!-- service -->
+                                                    <div class="vc_col-lg-2 vc_col-sm-12" style="padding: 10px;">
                                                         <label>
-                                                            Choose a Budget (USD)<br />
+                                                            Choose a Service <br />
                                                             <span class="wpcf7-form-control-wrap menu-18">
-                                                                <select name="menu-18" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
-                                                                    <option value="Less than 5K">Less than 5K</option>
-                                                                    <option value="5K - 10K">5K - 10K</option>
-                                                                    <option value="Over 10K">Over 10K</option>
-                                                                    <option value="Please advice">Please advice</option>
+                                                                <select name="service" id="service" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
+                                                                    <option value="Advertising">Advertising</option>
+                                                                    <option value="Branding">Branding</option>
+                                                                    <option value="Web Development">Web Development</option>
+                                                                    <option value="App Development">App Development</option>
+                                                                    <option value="Digital Marketing">Digital Marketing</option>
+                                                                    <option value="Contect Writing">Contect Writing</option>
                                                                 </select>
                                                             </span>
                                                         </label>
                                                     </div>
-                                                    <div class="vc_col-lg-12 vc_col-sm-12">
-                                                        <label> Project details<br />
-                                                        <span class="wpcf7-form-control-wrap message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Brief project details"></textarea></span> </label>
+
+                                                    <div class="vc_col-lg-2 vc_col-sm-12" style="padding: 10px;">
+                                                        <label> Budget <br />
+                                                            <span class="wpcf7-form-control-wrap your-phone">
+                                                                <input type="number" name="budget" id="budget" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="Your budget" />
+                                                            </span>
+                                                        </label>
                                                     </div>
-                                                    <div class="vc_col-lg-12 vc_col-sm-12">
-                                                        <input type="submit" value="Get a Quote" class="wpcf7-form-control wpcf7-submit" />
+
+                                                    <div class="vc_col-lg-2 vc_col-sm-12" style="padding: 10px;">
+                                                        <label>
+                                                            Currency <br />
+                                                            <span class="wpcf7-form-control-wrap menu-18">
+                                                                <select name="currency" id="currency" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
+                                                                    <option value="USD">USD ($)</option>
+                                                                    <option value="EUR">EUR (€)</option>
+                                                                    <option value="GBP">GBP (£)</option>
+                                                                    <option value="AUD">AUD (AU$)</option>
+                                                                    <option value="CAD">CAD (CA$)</option>
+                                                                    <option value="INR">INR (₹)</option>
+                                                                </select>
+                                                            </span>
+                                                        </label>
                                                     </div>
+
+                                                    <div class="vc_col-lg-6 vc_col-sm-12" style="padding: 10px;">
+                                                        <label> Subject <br />
+                                                            <span class="wpcf7-form-control-wrap subject">
+                                                                <input type="text" name="subject" id="subject" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Choose a subject" />
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="vc_col-lg-12 vc_col-sm-12" style="padding: 10px;">
+                                                        <label> Project details <br />
+                                                            <span class="wpcf7-form-control-wrap message">
+                                                                <textarea name="message" id="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Brief us about your requirement"></textarea>
+                                                            </span>
+                                                        </label>
+                                                    </div>
+
+                                                    <div class="vc_col-lg-12 vc_col-sm-12" style="padding: 10px;">
+                                                        <input type="submit" value="Get a Quote" />
+                                                    </div>
+
                                                     <div class="wpcf7-response-output" aria-hidden="true"></div>
+
                                                 </form>
+
                                             </div>
-                                            <div class="hidden" data-contact-btn="true">
+
+                                            <!-- <div class="hidden" data-contact-btn="true">
                                                 <button class="btn ">
                                                 <span class="btn-load"></span>
                                                 <span class="text"></span>
                                                 </button>
-                                            </div>
+                                            </div> -->
+                                            
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                         <div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid vc_row-no-padding">
                             <div class="wpb_column vc_column_container vc_col-sm-12">
                                 <div class="vc_column-inner">
@@ -1519,6 +1557,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="vc_row-full-width vc_clearfix"></div>
                         <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid clb__dark_section vc_custom_1570711629853 vc_row-has-fill">
                             <div class="wpb_column vc_column_container vc_col-sm-12">
@@ -1585,6 +1624,7 @@
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="vc_row-full-width vc_clearfix"></div>
                     </div>
                 </article>

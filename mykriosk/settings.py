@@ -31,7 +31,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'kriosk_main',
     'blog',
-    'authentication'
+    'authentication',
+    'panel',
+    'inquiry',
 ]
 
 MIDDLEWARE = [

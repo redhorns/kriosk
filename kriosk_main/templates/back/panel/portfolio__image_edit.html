@@ -1,0 +1,144 @@
+{% extends 'back/master_back.html' %}
+
+{% load static %}
+
+
+    {% block headblock %}
+
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+        
+        /* Firefox */
+        input[type=number] {
+          -moz-appearance: textfield;
+        }
+    </style>
+
+    <!-- smartphoto -->
+    <link rel="stylesheet" href="{% static 'back/plugins/smartphoto/smartphoto.min.css' %}">
+
+    {% endblock %}
+
+    
+    
+    {% block page_content %}     
+    <!-- padding : 0 on both sides -->
+    
+    <div class="container" style="padding: 10px 0px 0px 0px !important; margin-top: 35px;">
+        <div class="container">
+
+            <!-- form -->
+            <div class="row layout-top-spacing">
+                
+                <div id="ftFormArray" class="col-lg-12 layout-spacing">
+                    <div class="statbox widget box box-shadow">  
+
+                        <div class="widget-header">
+                            <div class="row">
+                                <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                                    <h4>Portfolio Image Edit</h4>
+                                    
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="margin: 10px 20px;">
+                                                <strong> {{message}} </strong>
+                                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+
+                                </div>          
+                            </div>
+                        </div>
+
+                        <div class="widget-content widget-content-area custom-autocomplete h-100">
+
+                            <!-- {{demo}} -->
+
+                            {% if portfolio_image %}
+
+                            <form onsubmit="myFunction()" action="{% url 'back_portfolio_image_edit' portfolio_pk=portfolio_pk portfolio_image_pk=portfolio_image.pk %}" method="post" id="quillForm1" name="quillForm1" enctype="multipart/form-data" class="form-horizontal">
+                                {% csrf_token %}
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-3">
+                                        <label for="index">Index</label>
+                                        <input type="number" id="index" name="index" value="{{portfolio_image.index}}" required>
+                                        <!-- have to initiate the TouchSpin -->
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="image1" style="margin-bottom: 0px;">Work Image</label>
+
+                                        <!-- selected -->
+                                        <h6 class="mt-2">Selected : &nbsp;&nbsp; 
+                                            {% if portfolio_image.image1 %}
+                                            <a href="{{portfolio_image.image1.url}}" class="js-smartPhoto" data-caption="" >
+                                                <img src="{{portfolio_image.image1.url}}" alt="portfolio_image" style="height: 50px; border-radius: 10%;">
+                                            </a>
+                                            {% else %}
+                                                <h6>None</h6>
+                                            {% endif %}
+                                        </h6>
+
+                                        <div class="custom-file-container" data-upload-id="myFirstImage">
+                                            <label><a href="javascript:void(0)" class="custom-file-container__image-clear" title="Clear Image"></a></label>
+                                            <label class="custom-file-container__custom-file" >
+                                                <input type="file" name="image1" id="image1" class="custom-file-container__custom-file__custom-file-input">
+                                                <input type="hidden" name="MAX_FILE_SIZE" value="10485760" />
+                                                <span class="custom-file-container__custom-file__custom-file-control"></span>
+                                            </label>
+                                            <div class="custom-file-container__image-preview"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                                <button type="submit" class="btn btn-primary mt-3">Edit Image</button>
+
+                            </form>
+
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+
+
+    {% block footerblock  %}
+
+    <!-- smartphoto -->
+    <script src="{% static 'back/plugins/smartphoto/smartphoto.min.js' %}"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded',function(){
+            new SmartPhoto(".js-smartPhoto");
+        });
+    </script>
+
+    <script>
+
+    $("input[name='index']").TouchSpin({
+        verticalbuttons: true,
+        buttondown_class: "btn btn-classic btn-outline-info",
+        buttonup_class: "btn btn-classic btn-outline-danger"
+    });
+
+    </script>
+
+
+
+    {% endblock %}

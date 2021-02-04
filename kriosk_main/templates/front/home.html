@@ -166,9 +166,8 @@
             <header id="qodef-page-header">
                 <div id="qodef-page-header-inner">
                     <a itemprop="url" class="qodef-header-logo-link qodef-height--set" href="../index.html" style="height:44px" rel="home">
-                        <img width="80" height="88" src="{% static 'front/' %}images/logo.png" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
-                        <img width="80" height="88" src="{% static 'front/' %}images/logo.png" class="qodef-header-logo-image qodef--dark" alt="logo dark" itemprop="image" /> 
-                        <img width="80" height="88" src="{% static 'front/' %}images/logo.png" class="qodef-header-logo-image qodef--light" alt="logo light" itemprop="image" />
+                        <img width="200" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
+                        <img width="200" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--light" alt="logo light" itemprop="image" />
                     </a>
                     <div class="qodef-widget-holder"></div>
                     <a href="javascript:void(0)" class="qodef-opener-icon qodef-m qodef-source--svg-path qodef-fullscreen-menu-opener">
@@ -186,12 +185,12 @@
                         </span>
                     </a>
                 </div>
-                <div class="qodef-header-sticky qodef-appearance--up qodef-skin--light">
+                <!-- <div class="qodef-header-sticky qodef-appearance--up qodef-skin--light">
                     <div class="qodef-header-sticky-inner ">
                         <a itemprop="url" class="qodef-header-logo-link qodef-height--set" href="../index.html" style="height:44px" rel="home">
-                            <img width="80" height="88" src="{% static 'front/' %}images/logo-R.png" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
-                            <img width="80" height="88" src="{% static 'front/' %}images/logo-R.png" class="qodef-header-logo-image qodef--dark" alt="logo dark" itemprop="image" /> 
-                            <img width="80" height="88" src="{% static 'front/' %}images/logo.png" class="qodef-header-logo-image qodef--light" alt="logo light" itemprop="image" />
+                            <img width="80" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
+                            <img width="80" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--dark" alt="logo dark" itemprop="image" /> 
+                            <img width="80" height="88" src="{% static 'front/images/image/logo.png' %}" class="qodef-header-logo-image qodef--light" alt="logo light" itemprop="image" />
                         </a> 
                         <a href="javascript:void(0)" class="qodef-opener-icon qodef-m qodef-source--svg-path qodef-fullscreen-menu-opener">
                             <span class="qodef-m-icon qodef--open">
@@ -208,15 +207,13 @@
                             </span>
                         </a>
                     </div>
-                </div>
+                </div> -->
 			</header>
 			
             <header id="qodef-page-mobile-header">
                 <div id="qodef-page-mobile-header-inner">
                     <a itemprop="url" class="qodef-mobile-header-logo-link" href="../index.html" style="height:32px" rel="home">
-                        <img width="80" height="88" src="{% static 'front/' %}images/logo-R.png" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
-                        <img width="80" height="88" src="{% static 'front/' %}images/logo.png" class="qodef-header-logo-image qodef--dark" alt="logo dark" itemprop="image" />
-                        <img width="80" height="88" src="{% static 'front/' %}images/logo.png" class="qodef-header-logo-image qodef--light" alt="logo light" itemprop="image" />
+                        <img width="80" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
                     </a>
                     <a href="javascript:void(0)" class="qodef-opener-icon qodef-m qodef-source--svg-path qodef-fullscreen-menu-opener">
                         <span class="qodef-m-icon qodef--open">
@@ -253,210 +250,38 @@
                                                                     <div class="elementor-element elementor-element-e9b6fc3 elementor-widget elementor-widget-malgre_core_portfolio_fullscreen_grid" data-id="e9b6fc3" data-element_type="widget" data-widget_type="malgre_core_portfolio_fullscreen_grid.default">
                                                                         <div class="elementor-widget-container">
                                                                             <div class="qodef-shortcode qodef-m  qodef-portfolio-fullscreen-grid-holder  qodef-grid qodef-layout--columns   qodef-col-num--3  qodef-responsive--predefined" data-col-number="3" data-number-of-posts="9">
+                                                                                
+                                                                                <!-- Tagline -->
                                                                                 <div class="qodef-fsg-holder-inner">
-																					
-                                                                                   
+																				   
+                                                                                    {% for home in home %}
 																					<article class="qodef-fsg-item">
                                                                                         <div class="qodef-fsg-item-inner">
                                                                                             <div class="qodef-fsg-item-table">
                                                                                                 <div class="qodef-fsg-item-table-cell">
                                                                                                     <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
+                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title" style="padding: 10px 0px;">
+                                                                                                            {{home.title}}
                                                                                                         </h4>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-																					</article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
-                                                                                        </div>
-                                                                                    </article>                                                                                   
-                                                                                    <article class="qodef-fsg-item">
-                                                                                        <div class="qodef-fsg-item-inner">
-                                                                                            <div class="qodef-fsg-item-table">
-                                                                                                <div class="qodef-fsg-item-table-cell">
-                                                                                                    <div class="qodef-fsg-item-table-cell-content">
-                                                                                                        <div class="qodef-categories-holder">
-                                                                                                            <div class="qodef-e-info-category">
-                                                                                                                <a itemprop="url" class="qodef-e-category" href="../portfolio-category/digital/index.html">Digital</a>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <h4 itemprop="name" class="qodef-sli-title entry-title">
-                                                                                                            Creative To Flow  1111
-                                                                                                        </h4>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link" href="../portfolio-item/creative-to-flow/index.html" target="_self"></a>
+                                                                                            <a itemprop="url" class="qodef-fsgi-link qodef-block-drag-link"></a>
                                                                                         </div>
                                                                                     </article>
+                                                                                    {% endfor %}
                                                                                     
                                                                                 </div>
+
+                                                                                <!-- BG-Images -->
                                                                                 <div class="qodef-fsg-image-holder">
+
+                                                                                    {% for home in home %}
                                                                                     <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_1.png' %})"></div>
+                                                                                        <div class="qodef-image-url" style="background-image: url({% if home.image1 %}{{home.image1.url}}{% endif %})"></div>
                                                                                     </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_2.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_3.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_4.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_5.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_6.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_7.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_8.png' %})"></div>
-                                                                                    </div>
-                                                                                    <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url( {% static 'front/-images/home/Slide_9.png' %})"></div>
-                                                                                    </div>
+                                                                                    {% endfor %}
+
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -550,26 +375,70 @@
                     </div>
                 </div>
 			</div>
-			
+            
+            <!-- menu -->
             <div id="qodef-fullscreen-area">
                 <div class="qodef-content-grid">
                     <div id="qodef-fullscreen-area-inner">
                         <nav class="qodef-fullscreen-menu">
                             <ul id="menu-fullscreen-menu" class="menu">
-                                <li id="menu-item-3630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3630"><a href="../index.html"><span class="qodef-menu-item-text">Main Home</span><br /><span class="sub_description">no place like home</span></a></li>
-                                <li id="menu-item-3634" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3634"><a href="../about-us/index.html"><span class="qodef-menu-item-text">About Us</span><br /><span class="sub_description">Learn more about us</span></a></li>
+
+                                <li id="menu-item-3630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3630">
+                                    <a href="{% url 'home' %}">
+                                        <span class="qodef-menu-item-text">Home</span><br />
+                                        <span class="sub_description">no place like home</span>
+                                    </a>
+                                </li>
+
+                                <li id="menu-item-3634" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3634">
+                                    <a href="{% url 'about' %}">
+                                        <span class="qodef-menu-item-text">About Us</span><br />
+                                        <span class="sub_description">Learn more about us</span>
+                                    </a>
+                                </li>
+
                                 <li id="menu-item-3635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3635 qodef-menu-item--narrow">
-                                    <a href="../portfolio/standard/index.html"><span class="qodef-menu-item-text">Portfolio</span><br /><span class="sub_description">Our projects</span></a>
+                                    <a href="../portfolio/standard/index.html">
+                                        <span class="qodef-menu-item-text">Services</span><br />
+                                        <span class="sub_description">What can we do for you</span>
+                                    </a>
                                     <div class="qodef-drop-down-second">
                                         <div class="qodef-drop-down-second-inner">
                                             <ul class="sub-menu">
-                                                <li id="menu-item-5629" class="menu-item menu-item-type-post_type menu-item-object-portfolio-item menu-item-5629"><a href="../portfolio-item/promote-your-work/index.html"><span class="qodef-menu-item-text">Promote Your Work</span></a></li>
-                                                <li id="menu-item-5630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630"><a href="../get-in-touch/index.html"><span class="qodef-menu-item-text">Get In Touch</span></a></li>
+                                                <li id="menu-item-5629" class="menu-item menu-item-type-post_type menu-item-object-portfolio-item menu-item-5629">
+                                                    <a href="../portfolio-item/promote-your-work/index.html">
+                                                        <span class="qodef-menu-item-text">Branding</span>
+                                                    </a>
+                                                </li>
+                                                <li id="menu-item-5630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630">
+                                                    <a href="../get-in-touch/index.html">
+                                                        <span class="qodef-menu-item-text">Web Dev</span>
+                                                    </a>
+                                                </li>
+                                                <li id="menu-item-5630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630">
+                                                    <a href="../get-in-touch/index.html">
+                                                        <span class="qodef-menu-item-text">Promotions</span>
+                                                    </a>
+                                                </li>
                                             </ul>
                                         </div>
                                     </div>
                                 </li>
-                                <li id="menu-item-3638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3638"><a href="../landing/index.html"><span class="qodef-menu-item-text">Landing</span><br /><span class="sub_description">Our product</span></a></li>
+
+                                <li id="menu-item-3638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3638">
+                                    <a href="../landing/index.html">
+                                        <span class="qodef-menu-item-text">Work</span><br />
+                                        <span class="sub_description">Be ready to be mesmerised</span>
+                                    </a>
+                                </li>
+
+                                <li id="menu-item-3638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3638">
+                                    <a href="../landing/index.html">
+                                        <span class="qodef-menu-item-text">Contact</span><br />
+                                        <span class="sub_description">We are right here</span>
+                                    </a>
+                                </li>
+                            
                             </ul>
                         </nav>
                     </div>

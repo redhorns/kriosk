@@ -90,6 +90,9 @@
         <style> .wpb_animate_when_almost_visible { opacity: 1; }</style>
     </noscript>
 
+    <!-- bootstrap -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
 {% endblock %}
 
 
@@ -128,6 +131,7 @@
         </div>
     </div>
 </div>
+
 <div class="page-container top-offset bottom-offset">
     <div id="primary" class="content-area">
         <div class="page-content">
@@ -135,12 +139,10 @@
                 <!-- Custom Content -->
                 <div class="page_content portfolio_page_content"></div>
                 <!-- Grid Layout -->
-                <div class="grid_1" data-ohio-portfolio-grid="true" >
+                <div class="grid_2" data-ohio-portfolio-grid="true" >
 
                     <!-- tabs -->
-                    <div class="portfolio-sorting text-left" 
-                        data-filter="portfolio" 
-                        >
+                    <!-- <div class="portfolio-sorting text-left" data-filter="portfolio">
                         <ul class="unstyled">
                             <li>Filter by</li>
                             <li>
@@ -186,311 +188,68 @@
                                 </a>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
 
-                    <div class="portfolio-grid vc_row" data-lazy-container="projects" data-isotope-grid="true" data-projects-per-page="7"  data-tilt-effect="true">
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-4 vc_col-md-undefined vc_col-xs-12 ohio-project-item grid-item section ohio-filter-project-2ec9e9be8bed1ffe0ed8144a3f59c246 ohio-filter-project-70012063bf1d91c6d3924d1475e0747a" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b15479fad">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/plastic-credit-card/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Airolam.png' %}" alt="Plastic Credit Card">
-                                    </a>
-                                    <!-- <div class="ohio-video-module-sc video-module with-animation open-popup" data-video-module="https://www.youtube.com/embed/t67_zAg5vvI">
-                                        <div class="btn-play btn-round " >
-                                            <i class="ion ion-ios-play"></i>
+                    <div class="portfolio-grid vc_row" data-lazy-container="projects" data-isotope-grid="true"  data-tilt-effect="true">
+                        {% for portfolio in portfolio %}
+                            
+                            {% if portfolio.image_wide == True %}
+                            <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-8 vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-5d845f00a32d05fb32beff8daf817d62 ohio-filter-project-6a81d94fbf5dcff590506b4b42e693bd" data-lazy-item="" data-lazy-scope="projects" >
+                                <div class="portfolio-item portfolio-item-grid portfolio-grid-type-2 parallax-holder  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b186892dd">
+                                    <div class="portfolio-item-image ">
+                                        <!-- Project image -->
+                                        <img class="parallax" src="{{portfolio.image1.url}}" alt="Diseño Gráfico Scenic">
+                                    </div>
+                                    <a href="{% url 'portfolio_detail' portfolio_pk=portfolio.pk %}" data-cursor-class="cursor-link" class="portfolio-item-details text-left">
+                                        <h3 class="portfolio-item-headline title ">{{portfolio.client_name | title}}</h3>
+                                        <div class="category-holder">
+                                            <span class="category ">Branding</span>
+                                            <span class="category ">Creative</span>
                                         </div>
-                                    </div> -->
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Plastic Credit Card</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/identity/index.html">Identity</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mockup/index.html">Mockup</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/plastic-credit-card/index.html">
-                                            Show project                    </a> 
+                                        <div class="show-project">
+                                            <div class="show-project-link">
+                                                Show project                
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-undefined vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-5d845f00a32d05fb32beff8daf817d62 ohio-filter-project-6a81d94fbf5dcff590506b4b42e693bd" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1547ce02">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/diseno-grafico-scenic/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Decora.png' %}" alt="Diseño Gráfico Scenic">
                                     </a>
                                     <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
                                         <i class="ion ion-md-expand"></i>
                                     </div>
                                 </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Diseño Gráfico Scenic</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/branding/index.html">Branding</a></span>
-                                        <span class="category "><a href="../../portfolio-category/creative/index.html">Creative</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/diseno-grafico-scenic/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-undefined vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-e40476442289a853955d442c45f52fa2 ohio-filter-project-7940c3d6203dd4ca666a303f4993e0f0" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548ab3c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Eraon.png' %}" alt="Fitness Lifestyle Mobile App">
+                            {% else %}
+                            <div class="portfolio-item-wrap masonry-block vc_col-lg-4 vc_col-md-4 vc_col-xs-12 ohio-project-item grid-item section ohio-filter-project-2ec9e9be8bed1ffe0ed8144a3f59c246 ohio-filter-project-70012063bf1d91c6d3924d1475e0747a" data-lazy-item="" data-lazy-scope="projects" >
+                                <div class="portfolio-item portfolio-item-grid portfolio-grid-type-2 parallax-holder  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b18686d3f">
+                                    <div class="portfolio-item-image ">
+                                        <!-- Project image -->
+                                        <img class="parallax" src="{{portfolio.image1.url}}" alt="Plastic Credit Card">
+                                    </div>
+                                    <a href="{% url 'portfolio_detail' portfolio_pk=portfolio.pk %}" data-cursor-class="cursor-link" class="portfolio-item-details text-left">
+                                        <h3 class="portfolio-item-headline title ">{{portfolio.client_name | title}}</h3>
+                                        <div class="category-holder">
+                                            <span class="category ">Identity</span>
+                                            <span class="category ">Mockup</span>
+                                        </div>
+                                        <div class="show-project">
+                                            <div class="show-project-link">
+                                                Show project                
+                                            </div>
+                                        </div>
                                     </a>
                                     <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
                                         <i class="ion ion-md-expand"></i>
                                     </div>
                                 </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Fitness Lifestyle Mobile App</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/development/index.html">Development</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mobile-app/index.html">Mobile App</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-4 vc_col-md-undefined vc_col-xs-12 ohio-project-item grid-item section ohio-filter-project-2ec9e9be8bed1ffe0ed8144a3f59c246 ohio-filter-project-70012063bf1d91c6d3924d1475e0747a" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548d49c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/diseno-de-moda/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Bell.png' %}" alt="Diseño de Moda">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Diseño de Moda</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/identity/index.html">Identity</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mockup/index.html">Mockup</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/diseno-de-moda/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-4 vc_col-md-undefined vc_col-xs-12 ohio-project-item grid-item section ohio-filter-project-2ec9e9be8bed1ffe0ed8144a3f59c246 ohio-filter-project-70012063bf1d91c6d3924d1475e0747a" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b15480ab6">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/captive-bright-utensil/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Hirshita.jpg' %}" alt="Captive Bright Utensil">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Captive Bright Utensil</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/identity/index.html">Identity</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mockup/index.html">Mockup</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/captive-bright-utensil/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-undefined vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-e40476442289a853955d442c45f52fa2 ohio-filter-project-7940c3d6203dd4ca666a303f4993e0f0" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548ab3c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Galaxy.png' %}" alt="Fitness Lifestyle Mobile App">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Fitness Lifestyle Mobile App</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/development/index.html">Development</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mobile-app/index.html">Mobile App</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-undefined vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-e40476442289a853955d442c45f52fa2 ohio-filter-project-7940c3d6203dd4ca666a303f4993e0f0" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548ab3c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Laminate-Hub.png' %}" alt="Fitness Lifestyle Mobile App">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Fitness Lifestyle Mobile App</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/development/index.html">Development</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mobile-app/index.html">Mobile App</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-4 vc_col-md-undefined vc_col-xs-12 ohio-project-item grid-item section ohio-filter-project-2ec9e9be8bed1ffe0ed8144a3f59c246 ohio-filter-project-70012063bf1d91c6d3924d1475e0747a" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548d49c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/diseno-de-moda/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Noble.jpg' %}" alt="Diseño de Moda">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Diseño de Moda</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/identity/index.html">Identity</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mockup/index.html">Mockup</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/diseno-de-moda/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-4 vc_col-md-undefined vc_col-xs-12 ohio-project-item grid-item section ohio-filter-project-2ec9e9be8bed1ffe0ed8144a3f59c246 ohio-filter-project-70012063bf1d91c6d3924d1475e0747a" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b15480ab6">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/captive-bright-utensil/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Rang.png' %}" alt="Captive Bright Utensil">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Captive Bright Utensil</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/identity/index.html">Identity</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mockup/index.html">Mockup</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/captive-bright-utensil/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-undefined vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-e40476442289a853955d442c45f52fa2 ohio-filter-project-7940c3d6203dd4ca666a303f4993e0f0" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548ab3c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Levin.png' %}" alt="Fitness Lifestyle Mobile App">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Fitness Lifestyle Mobile App</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/development/index.html">Development</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mobile-app/index.html">Mobile App</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="portfolio-item-wrap masonry-block vc_col-lg-8 vc_col-md-undefined vc_col-xs-12 double-width ohio-project-item grid-item section ohio-filter-project-e40476442289a853955d442c45f52fa2 ohio-filter-project-7940c3d6203dd4ca666a303f4993e0f0" data-lazy-item="" data-lazy-scope="projects" >
-                            <div class="portfolio-item portfolio-item-grid portfolio-grid-type-1  hover-parallax-img" data-portfolio-popup="ohio-lightbox-6001b1548ab3c">
-                                <div data-cursor-class="cursor-link" class="portfolio-item-image parallax-holder">
-                                    <!-- Project image -->
-                                    <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                    <img class="parallax" src="{% static 'front/images/new/Surfica.jpg' %}" alt="Fitness Lifestyle Mobile App">
-                                    </a>
-                                    <div class="btn-lightbox btn-round btn-round-outline btn-round-small btn-round-light" tabindex="1">
-                                        <i class="ion ion-md-expand"></i>
-                                    </div>
-                                </div>
-                                <div class="portfolio-item-details text-left">
-                                    <h3 class="portfolio-item-headline title ">Fitness Lifestyle Mobile App</h3>
-                                    <div class="category-holder">
-                                        <span class="category "><a href="../../portfolio-category/development/index.html">Development</a></span>
-                                        <span class="category "><a href="../../portfolio-category/mobile-app/index.html">Mobile App</a></span>
-                                    </div>
-                                    <div class="show-project">
-                                        <div class="show-project-link">
-                                            <a href="../../project/fitness-lifestyle-mobile-app/index.html">
-                                            Show project                    </a> 
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                            {% endif %}
+                        
+                        {% endfor %}
 
                     </div>
+
                     <div class="lazy-load load-more font-titles text-left" data-lazy-load="click" data-lazy-pages-count="2" data-lazy-load-url-pattern="https://ohio.clbthemes.com/portfolio/classic/page/{{page}}/?ohio_of=dynamic_css,header,footer,headline,breadcrumbs" data-lazy-load-scope="projects"><span class="btn-round btn-round-light" tabindex="0"><i class="ion ion-md-sync"></i></span><span class="loadmore-text">Load More</span><span class="loading-text">Loading</span></div>
                 </div>
-                <!-- Slider Layout -->
-                <!-- Custom content -->
+
             </main>
         </div>
     </div>
@@ -912,9 +671,10 @@
         })()
     </script>
     
-    <script type="text/template" id="tmpl-unavailable-variation-template">
-        <p>Sorry, this product is unavailable. Please choose a different combination.</p>
-    </script>
+    <!-- bootstrap -->
+    <!-- <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
     <link rel='stylesheet' id='wphb-6-ionicons-css'  href='{% static "front/css/ionicons.min.css" %}' type='text/css' media='all' />
     <link rel='stylesheet' id='wphb-6-fontawesome-font-css'  href='{% static "front/css/fontawesome.min.css" %}' type='text/css' media='all' />
     <script type='text/javascript' src='{% static "front/js/jquery.selectBox.min7359.js" %}' id='jquery-selectBox-js'></script>

@@ -1,23 +1,34 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from blog.models import Blog, Blog_Section
+from panel.models import Home, Portfolio, Portfolio_Image
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from itertools import chain
 
 
 
 
-
+# < ============================== Home ============================== >
 
 def home(request):
 
-    return render(request, 'front/home.html')
+    home = Home.objects.all()
+
+    send = {
+        'home': home,
+    }
+
+    return render(request, 'front/home.html', send)
     
+
+# < ============================== About ============================== >
 
 def about(request):
 
     return render(request, 'front/about.html')
 
+
+# < ==============================  Blgo  ============================= >
 
 def blog(request):
 
@@ -78,10 +89,6 @@ def blog_detail(request, blog_slug):
         similar_blog = Blog.objects.filter(fk=blog_detail.fk).exclude(pk=blog_detail.pk).order_by("-index")[1:4]
     except :
         similar_blog = None
-
-    print("===============")
-    for i in similar_blog :
-        print(i)
 
     # next blog
     try :
@@ -197,15 +204,36 @@ def blog_filter(request, section_pk) :
     return render(request, 'front/blog.html', send)
 
 
+
+# < ============================  Portfolio  =========================== >
+
 def portfolio_list(request):
 
-    return render(request, 'front/portfolio_list.html')
+    portfolio = Portfolio.objects.all().order_by('index')
+
+    send = {
+        'portfolio': portfolio,
+    }
+
+    return render(request, 'front/portfolio_list.html', send)
 
 
-def portfolio_detail(request):
+def portfolio_detail(request, portfolio_pk):
 
-    return render(request, 'front/portfolio_detail.html')
+    portfolio = Portfolio.objects.get(pk=portfolio_pk)
 
+    portfolio_images = Portfolio_Image.objects.filter(fk=portfolio).order_by('index')
+    
+    send = {
+        'portfolio': portfolio,
+        'portfolio_images': portfolio_images,
+    }
+
+    return render(request, 'front/portfolio_detail.html', send)
+
+
+
+# < ===========================  Service  ============================== >
 
 def service_list(request):
 
@@ -217,10 +245,14 @@ def service_detail(request):
     return render(request, 'front/service_detail.html')
 
 
+# < ===========================  Contact  =============================== >
+
 def contact(request):
 
     return render(request, 'front/contact.html')
 
+
+# < ==========================  Career  ================================= >
 
 def career(request):
 

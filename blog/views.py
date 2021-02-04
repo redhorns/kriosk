@@ -288,6 +288,7 @@ def blog_section_list(request) :
     # fitst()/last() can also work or latest('index')
     blog_section = Blog_Section.objects.all()
 
+    
     send = {
         'blog_section': blog_section,
     }

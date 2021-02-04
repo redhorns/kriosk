@@ -15,9 +15,11 @@ urlpatterns = [
 
 
     url(r'^portfolio_list/$', views.portfolio_list, name='portfolio_list'),
-    url(r'^portfolio_detail/$', views.portfolio_detail, name='portfolio_detail'),
+    url(r'^portfolio_detail/(?P<portfolio_pk>\d+)/$', views.portfolio_detail, name='portfolio_detail'),
+
     url(r'^service_list/$', views.service_list, name='service_list'),
     url(r'^service_detail/$', views.service_detail, name='service_detail'),
+    
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^career/$', views.career, name='career'),
 

@@ -107,17 +107,10 @@
                     </a>
                 </div>
             </div>
-            <div class="project-first-image">
-                <img src="{% static 'front/images/oh__img26-min.jpg' %}" alt="">
-                <div class="ohio-video-module-sc video-module with-animation open-popup" data-video-module="https://www.youtube.com/embed/t67_zAg5vvI">
-                    <div class="btn-play btn-round " tabindex='1'>
-                        <i class="ion ion-ios-play"></i>
-                    </div>
-                </div>
-            </div>
-            <img src="{% static 'front/images/oh__img27-min.jpg' %}" alt="">
-            <img src="{% static 'front/images/oh__img28-min.jpg' %}" alt="">
-            <img src="{% static 'front/images/oh__img29-min.jpg' %}" alt="">
+            {% for portfolio_images in portfolio_images %}
+            <img src="{{portfolio_images.image1.url}}" alt="">
+            {% endfor %}
+
         </div>
         <div class="vc_col-lg-6 vc_col-md-6 vc_col-sm-12 project-page-sticky-container">
             <div class="project-page-sticky" data-ohio-content-scroll="#scroll-portfolio">
