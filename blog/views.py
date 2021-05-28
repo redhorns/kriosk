@@ -8,8 +8,10 @@ import json
 from django.core.files.storage import default_storage
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from itertools import chain
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def blog_list(request):
 
     blogs = Blog.objects.all().order_by('-index')
@@ -34,7 +36,7 @@ def blog_list(request):
 
 
 
-
+@login_required
 def blog_add(request):
 
     if request.method == 'POST':
@@ -46,6 +48,9 @@ def blog_add(request):
         read_duration = request.POST.get('read_duration', 10)
         tag = request.POST.get('tag', '')
         image1 = request.FILES.get('image1', None)
+
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
 
 
         # checking : section exists
@@ -95,7 +100,8 @@ def blog_add(request):
             tag = tag,
             date = date,
             image1 = image1,
-
+            meta_title = meta_title,
+            meta_description = meta_description,
         )
 
         blog.save()
@@ -117,7 +123,7 @@ def blog_add(request):
 
 
 
-
+@login_required
 def blog_edit(request, blog_pk) :
 
     if request.method == 'POST' :
@@ -146,6 +152,9 @@ def blog_edit(request, blog_pk) :
         date = request.POST.get('date', '')
         tag = request.POST.get('tag', '')
         image1 = request.FILES.get('image1', None)
+
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
 
         
         # checking : section exists
@@ -185,6 +194,9 @@ def blog_edit(request, blog_pk) :
         blog.date = date
         blog.tag = tag
 
+        blog.meta_title = meta_title
+        blog.meta_description = meta_description
+
         blog.save()
 
         msg = "Voila, Edits made to this blog has been applied successfully !"
@@ -223,7 +235,7 @@ def blog_edit(request, blog_pk) :
 
 
 
-
+@login_required
 def blog_delete(request, blog_pk) :
 
     # checking : if blog exists
@@ -250,7 +262,7 @@ def blog_delete(request, blog_pk) :
 
 
 
-
+@login_required
 def blog_back_search(request) :
 
     search = request.GET.get('search', '')
@@ -282,7 +294,7 @@ def blog_back_search(request) :
 
 
 
-
+@login_required
 def blog_section_list(request) :
 
     # fitst()/last() can also work or latest('index')
@@ -297,7 +309,7 @@ def blog_section_list(request) :
 
 
 
-
+@login_required
 def blog_section_add(request) :
 
     if request.method == 'POST' :
@@ -329,7 +341,7 @@ def blog_section_add(request) :
 
 
 
-
+@login_required
 def blog_section_edit(request, section_pk) :
 
     if request.method == 'POST' :
@@ -382,7 +394,7 @@ def blog_section_edit(request, section_pk) :
 
 
 
-
+@login_required
 def blog_section_delete(request, section_pk) :
 
     try :

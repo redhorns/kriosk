@@ -5,6 +5,10 @@
 
     {% block headblock %}
 
+    <link rel="stylesheet" type="text/css" href="{% static 'back/plugins/table/datatable/datatables.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/plugins/table/datatable/custom_dt_html5.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'back/plugins/table/datatable/dt-global_style.css' %}">
+
     {% endblock %}
 
     
@@ -22,27 +26,78 @@
 
                             <!-- page title -->
                             <div class="col-xl-9 col-lg-8 col-md-7 col-sm-3 col-5 pt-4 pl-4">
-                                <h4>Inquiry List</h4>
+                                <h4>Enquiry List</h4>
                             </div>
 
                         </div>
                     </div>
 
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="margin: 10px 20px;">
-                                <strong>{{message}}</strong>
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive">
 
-                            <table class="table table-bordered mb-4" style="margin-bottom: 100px !important;">
+                            <table id="html5-extension" class="table table-hover non-hover" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">Index</th>
+                                        <th class="text-center">Name</th>
+                                        <th class="text-center">Date</th>
+                                        <th class="text-center">Requirement</th>
+                                        <th class="text-center">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for contact_back in contact_back %}
+                                    <tr>
+                                        <td class="text-center">{{forloop.counter}}</td>
+                                        <td class="text-center">{{contact_back.name}}</td>
+                                        <td class="text-center">{{contact_back.date}}</td>
+                                        <td class="text-center">{{contact_back.subject}}</td>
+                                        <!-- <td>
+                                            <div class="d-flex">
+                                                <div class="usr-img-frame mr-2 rounded-circle">
+                                                    <img alt="avatar" class="img-fluid rounded-circle" src="assets/img/boy.png">
+                                                </div>
+                                            </div>
+                                        </td> -->
+                                        <td>
+                                            <div class="btn-group">
+                                                <a href="{% url 'contact_back_view' contact_pk=contact_back.pk %}"><button type="button" class="btn btn-dark btn-sm">View</button></a>
+                                                
+                                                <button type="button" class="btn btn-dark btn-sm dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                                                </button>
+                                                
+                                                <div class="dropdown-menu" aria-labelledby="dropdownMenuReference1">
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#contact_{{contact_back.pk}}">Remove</a>
+                                                </div>
+
+                                                <!-- Delete Confirm -->
+                                                <div class="modal fade bottom" id="contact_{{contact_back.pk}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="opacity: 1;">
+                                                    <div class="modal-dialog modal-frame modal-bottom" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                <div class="row d-flex justify-content-center align-items-center">
+            
+                                                                    <p class="pt-3 pr-2">
+                                                                    This action will delete the Lead <b>"{{contact_back.email}}"</b> completely and it is
+                                                                    irreparable by nature. Once it is gone it is gone !
+                                                                    </p>
+            
+                                                                    <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Close</button>
+                                                                    <a href="{% url 'contact_back_delete' contact_pk=contact_back.pk %}"><button type="button" class="btn btn-dark"><b>Delete</b></button></a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+
+                            <!-- <table class="table table-bordered mb-4" style="margin-bottom: 100px !important;">
                                 <thead>
                                     <tr>
                                         <th class="text-center">Name</th>
@@ -53,11 +108,10 @@
                                 </thead>
                                 <tbody>
 
-                                    {% for contact_back in contact_back %}
                                     <tr>
-                                        <td class="text-center">{{contact_back.name}}</td>
-                                        <td class="text-center">{{contact_back.date}}</td>
-                                        <td class="text-center">{{contact_back.subject}}</td>
+                                        <td class="text-center">#</td>
+                                        <td class="text-center">#</td>
+                                        <td class="text-center">#</td>
                                         <td class="text-center">
                                             
                                             <div class="dropdown custom-dropdown">
@@ -66,12 +120,11 @@
                                                 </a>
             
                                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuLink7">
-                                                    <a class="dropdown-item" href="{% url 'contact_back_view' contact_pk=contact_back.pk %}">View</a>
-                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#contact_{{contact_back.pk}}">Delete</a>
+                                                    <a class="dropdown-item" href="#">View</a>
+                                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#">Delete</a>
                                                 </div>
 
-                                                 <!-- Delete Confirm -->
-                                                 <div class="modal fade bottom" id="contact_{{contact_back.pk}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="opacity: 1;">
+                                                 <div class="modal fade bottom" id="#" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="opacity: 1;">
                                                     <div class="modal-dialog modal-frame modal-bottom" role="document">
                                                         <div class="modal-content">
                                                             <div class="modal-body">
@@ -83,7 +136,7 @@
                                                                     </p>
             
                                                                     <button type="button" class="btn btn-light btn-sm" data-dismiss="modal">Close</button>
-                                                                    <a href="{% url 'contact_back_delete' contact_pk=contact_back.pk %}"><button type="button" class="btn btn-dark"><b>Delete</b></button></a>
+                                                                    <a href="#"><button type="button" class="btn btn-dark"><b>Delete</b></button></a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -93,10 +146,9 @@
                                             </div>
                                         </td>
                                     </tr>
-                                    {% endfor %}
 
                                 </tbody>
-                            </table>
+                            </table> -->
 
                         </div>
             
@@ -112,5 +164,37 @@
 
 
     {% block footerblock  %}
+
+        <!-- BEGIN PAGE LEVEL CUSTOM SCRIPTS -->
+        <script src="{% static 'back/plugins/table/datatable/datatables.js' %}"></script>
+        <!-- NOTE TO Use Copy CSV Excel PDF Print Options You Must Include These Files  -->
+        <script src="{% static 'back/plugins/table/datatable/button-ext/dataTables.buttons.min.js' %}"></script>
+        <script src="{% static 'back/plugins/table/datatable/button-ext/jszip.min.js' %}"></script>    
+        <script src="{% static 'back/plugins/table/datatable/button-ext/buttons.html5.min.js' %}"></script>
+        <script src="{% static 'back/plugins/table/datatable/button-ext/buttons.print.min.js' %}"></script>
+
+        <script>
+            $('#html5-extension').DataTable( {
+                dom: '<"row"<"col-md-12"<"row"<"col-md-6"B><"col-md-6"f> > ><"col-md-12"rt> <"col-md-12"<"row"<"col-md-5"i><"col-md-7"p>>> >',
+                buttons: {
+                    buttons: [
+                        { extend: 'copy', className: 'btn' },
+                        { extend: 'csv', className: 'btn' },
+                        { extend: 'excel', className: 'btn' },
+                        { extend: 'print', className: 'btn' }
+                    ]
+                },
+                "oLanguage": {
+                    "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
+                    "sInfo": "Showing page _PAGE_ of _PAGES_",
+                    "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
+                    "sSearchPlaceholder": "Search...",
+                   "sLengthMenu": "Results :  _MENU_",
+                },
+                "stripeClasses": [],
+                "lengthMenu": [7, 10, 20, 50],
+                "pageLength": 7 
+            } );
+        </script>
 
     {% endblock %}

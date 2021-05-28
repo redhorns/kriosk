@@ -17,7 +17,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['krioskcreata.tk', 'http://krioskcreata.tk', 'https://krioskcreata.tk', 'www.krioskcreata.tk', 'localhost', 'https://www.krioskcreata.tk', 'http://krioskcreata.tk']
 
 
 # Application definition
@@ -25,6 +25,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
+    # 'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -34,7 +35,10 @@ INSTALLED_APPS = [
     'authentication',
     'panel',
     'inquiry',
+    'django.contrib.sitemaps',
 ]
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -125,8 +129,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "mail.krioskcreata.com"
 EMAIL_USE_TLS = True
-EMAIL_PORT = 587
+EMAIL_PORT = 2525
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+
+
+
+LOGIN_URL = '/authentication/login/'
 
 

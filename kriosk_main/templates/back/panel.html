@@ -24,66 +24,38 @@
                                 <h5 class="">Recent Inquiries</h5>
                             </div>
 
+                            <style>
+                                @media(max-width:768px){
+                                    .btn{
+                                        padding: 5px 15px;
+                                        font-size: 10px;
+                                    }
+                                }
+                            </style>
                             <div class="widget-content">
-
-                                <div class="transactions-list">
-                                    <div class="t-item">
-                                        <div class="t-company-name">
-                                            <div class="t-icon">
-                                                <div class="avatar avatar-xl">
-                                                    <span class="avatar-title rounded-circle">SP</span>
-                                                </div>
-                                            </div>
-                                            <div class="t-name">
-                                                <h4>Shaun Park</h4>
-                                                <p class="meta-date">4 Aug 1:00PM</p>
-                                            </div>
-                                        </div>
-                                        <div class="t-rate rate-inc">
-                                            <a href="#" class="btn btn-dark">Know More</a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="transactions-list">
-                                    <div class="t-item">
-                                        <div class="t-company-name">
-                                            <div class="t-icon">
-                                                <div class="avatar avatar-xl">
-                                                    <span class="avatar-title rounded-circle">AD</span>
-                                                </div>
-                                            </div>
-                                            <div class="t-name">
-                                                <h4>Amy Diaz</h4>
-                                                <p class="meta-date">4 Aug 1:00PM</p>
-                                            </div>
-
-                                        </div>
-                                        <div class="t-rate rate-inc">
-                                            <a href="#" class="btn btn-dark">Know More</a>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                
+                                {% for contact in contact %}
                                 <div class="transactions-list">
                                     <div class="t-item">
                                         <div class="t-company-name">
                                             <div class="t-icon">
                                                 <div class="icon">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
                                                 </div>
                                             </div>
                                             <div class="t-name">
-                                                <h4>Netflix</h4>
-                                                <p class="meta-date">4 Aug 1:00PM</p>
+                                                <h4>{{contact.name | title}}</h4>
+                                                <p class="meta-date">{{contact.date}}</p>
                                             </div>
 
                                         </div>
                                         <div class="t-rate rate-dec">
-                                            <a href="#" class="btn btn-dark">Know More</a>
+                                            <a href="{% url 'contact_back_view' contact_pk=contact.pk %}" class="btn btn-dark">Know More</a>
                                         </div>
                                     </div>
                                 </div>
+                                {% endfor %}
+
                             </div>
                         </div>
                     </div>
@@ -94,11 +66,14 @@
                                 <div class="account-box">
                                     <div class="info">
                                         <h5 class="">Blogs</h5>
-                                        <p class="inv-balance">50th ?</p>
+                                        <p class="inv-balance" style="color: black;">{{blog_count}} ?</p>
                                     </div>
                                     <div class="acc-action">
                                         <div class="">
-                                            <a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>ADD</a>
+                                            <a href="{% url 'blog_add' %}">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                                                ADD
+                                            </a>
                                         </div>
                                     </div>
                                 </div>

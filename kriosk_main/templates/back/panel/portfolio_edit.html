@@ -117,13 +117,6 @@
                                     </div>
                                 </div>
 
-                                <div class="form-row mb-4">
-                                    <div class="form-group col-md-8">
-                                        <label for="services">Services</label>
-                                        <input type="text" id="services" name="services" placeholder="Add Services" class="form-control" data-role="tagsinput" value="{{portfolio.services}}" required>
-                                    </div>
-                                </div>
-
                                 <div class="form-row mb-4" style="padding-bottom: 100px;">
                                     <div class="form-group col-md-12">
                                         <label for="detail1">Detail</label>
@@ -132,6 +125,73 @@
                                 </div>
                                 <div class="form-group mb-4">
                                     <input type="hidden" name="detail1" id="detail1" class="form-control" value="{{portfolio.detail}}" required>
+                                </div>
+
+                                <!-- services -->
+                                <!-- advt -->
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_advt_bool">Service (Advertising)</label>
+                                        <label class="switch s-dark mr-2" style="margin-left: 30px; margin-bottom: -3px;">
+                                            {% if portfolio.service_advt_bool == True %}
+                                            <input type="checkbox" id="service_advt_bool" name="service_advt_bool" value="True" checked>
+                                            {% else %}
+                                            <input type="checkbox" id="service_advt_bool" name="service_advt_bool" value="True">
+                                            {% endif %}
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_advt">Service (Advertising)</label>
+                                        <input type="text" class="form-control" id="service_advt" name="service_advt" placeholder="Add ..." value="{{portfolio.service_advt}}">
+                                    </div>
+                                </div>
+
+                                <!-- brand identity -->
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_bi_bool">Service (Brand Identity)</label>
+                                        <label class="switch s-dark mr-2" style="margin-left: 30px; margin-bottom: -3px;">
+                                            {% if portfolio.service_bi_bool == True %}
+                                            <input type="checkbox" id="service_bi_bool" name="service_bi_bool" value="True" checked>
+                                            {% else %}
+                                            <input type="checkbox" id="service_bi_bool" name="service_bi_bool" value="True">
+                                            {% endif %}
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_bi">Service (Brand Identity)</label>
+                                        <input type="text" class="form-control" id="service_bi" name="service_bi" placeholder="Add ..." value="{{portfolio.service_bi}}">
+                                    </div>
+                                </div>
+
+                                <!-- digital -->
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_digital_bool">Service (Digital)</label>
+                                        <label class="switch s-dark mr-2" style="margin-left: 30px; margin-bottom: -3px;">
+                                            {% if portfolio.service_digital_bool == True %}
+                                            <input type="checkbox" id="service_digital_bool" name="service_digital_bool" value="True" checked>
+                                            {% else %}
+                                            <input type="checkbox" id="service_digital_bool" name="service_digital_bool" value="True">
+                                            {% endif %}
+                                            <span class="slider"></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="service_digital">Service (Digital)</label>
+                                        <input type="text" class="form-control" id="service_digital" name="service_digital" placeholder="Add ..." value="{{portfolio.service_digital}}">
+                                    </div>
                                 </div>
 
                                 <div class="form-row mb-4">
@@ -174,6 +234,21 @@
                                             {% endif %}
                                             <span class="slider"></span>
                                         </label>
+                                    </div>
+                                </div>
+
+                                <!-- meta -->
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="meta_title">Meta Title</label>
+                                        <input type="text" class="form-control" id="meta_title" name="meta_title" value="{{portfolio.meta_title}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="meta_description">Meta Description</label>
+                                        <textarea name="meta_description" id="meta_description" cols="30" rows="3" class="form-control" required>{{portfolio.meta_description}}</textarea>
                                     </div>
                                 </div>
                             

@@ -191,9 +191,24 @@
                                     </div>
                                 </div>
 
+                                <!-- meta -->
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="meta_title">Meta Title</label>
+                                        <input type="text" class="form-control" id="meta_title" name="meta_title" value="{{blog.meta_title}}" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-row mb-4">
+                                    <div class="form-group col-md-6">
+                                        <label for="meta_description">Meta Description</label>
+                                        <textarea name="meta_description" id="meta_description" cols="30" rows="3" class="form-control" required>{{blog.meta_description}}</textarea>
+                                    </div>
+                                </div>
 
 
-                                <button type="submit" class="btn btn-primary mt-3">Add Blog</button>
+
+                                <button type="submit" class="btn btn-primary mt-3">Edit Blog</button>
 
                             </form>
 
@@ -217,6 +232,7 @@
 
     <!-- smartphoto -->
     <script src="{% static 'back/plugins/smartphoto/smartphoto.min.js' %}"></script>
+    
     <script>
         window.addEventListener('DOMContentLoaded',function(){
             new SmartPhoto(".js-smartPhoto");

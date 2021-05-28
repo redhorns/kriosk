@@ -9,21 +9,22 @@ urlpatterns = [
 
     # blog
     url(r'^blog/$', views.blog, name='blog'),
-    url(r'^blog_detail/(?P<blog_slug>.*)/$', views.blog_detail, name='blog_detail'),
+    url(r'^blog/(?P<blog_slug>.*)/$', views.blog_detail, name='blog_detail'),
     url(r'^blog/search/$', views.blog_front_search, name='blog_front_search'),
     url(r'^blog/filter/(?P<section_pk>\d+)/$', views.blog_filter, name='blog_filter'),
 
 
-    url(r'^portfolio_list/$', views.portfolio_list, name='portfolio_list'),
-    url(r'^portfolio_detail/(?P<portfolio_pk>\d+)/$', views.portfolio_detail, name='portfolio_detail'),
+    url(r'^portfolio/$', views.portfolio_list, name='portfolio_list'),
+    url(r'^portfolio/(?P<portfolio_name_slug>.*)/$', views.portfolio_detail, name='portfolio_detail'),
 
-    url(r'^service_list/$', views.service_list, name='service_list'),
-    url(r'^service_detail/$', views.service_detail, name='service_detail'),
+    url(r'^service/$', views.service_list, name='service_list'),
+    url(r'^service/(?P<service_name_slug>.*)/$', views.service_detail, name='service_detail'),
     
     url(r'^contact/$', views.contact, name='contact'),
     url(r'^career/$', views.career, name='career'),
 
     url(r'^panel/$', views.panel, name='panel'),
+
                      
 
 

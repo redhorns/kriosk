@@ -91,7 +91,7 @@
 <div class="page-container project-page layout-type3 full-top-position" id="scroll-portfolio">
     <div class="vc_row">
         <div class="vc_col-md-6 vc_col-sm-12 project-page-media-holder" data-scroll-share-bar="true">
-            <div class="clb-share-bar">
+            <!-- <div class="clb-share-bar">
                 <div class="socialbar small flat">
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fohio.clbthemes.com%2Fproject%2Fdinamica-lifestyle%2F" class="facebook">
                     <i class="fab fa-facebook-f"></i>
@@ -106,46 +106,55 @@
                     <span class="social-text">Pinterest</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
             {% for portfolio_images in portfolio_images %}
-            <img src="{{portfolio_images.image1.url}}" alt="">
+            <img src="{% if portfolio_images %}{{portfolio_images.image1.url}}{% endif %}" alt="" loading="lazy">
             {% endfor %}
-
         </div>
         <div class="vc_col-lg-6 vc_col-md-6 vc_col-sm-12 project-page-sticky-container">
             <div class="project-page-sticky" data-ohio-content-scroll="#scroll-portfolio">
                 <div class="project-page-content">
+                    
+                    <!-- tagline -->
+                    <div class="category-holder"></div>
                     <div class="category-holder">
-                        <span class="category"><a href="../../portfolio-category/identity/index.html">Identity</a></span>
-                        <span class="category"><a href="../../portfolio-category/mockup/index.html">Mockup</a></span>
+                        <span class="category"><a>{{portfolio.client_tagline}}</a></span>
                     </div>
-                    <span class="date">June 3, 2019</span>
+
+                    <!-- title -->
                     <div class="project-title">
-                        <h1 class="headline">Dinámica Lifestyle</h1>
+                        <h1 class="headline">{{portfolio.client_name | title}}</h1>
                     </div>
-                    <div class="project-description">
-                        <p>We’ve created <strong>a unique visual system and strategy</strong> across the wide existing spectrum of visible mobile applications and found yourself in a wide, <a href="#">straggling</a> with wainscots.</p>
-                        <div class="project-task">
-                            <h6 class="heading-sm">Task</h6>
-                            <p class="project-task-description">Rebuild a unified visual system for the advertising agency, made of steel which can change the world in a while.</p>
-                        </div>
+
+                    <!-- detail -->
+                    <div class="project-description" style="text-align: justify !important;">
+                        <p>
+                            {{portfolio.detail | safe}}
+                        </p>
                     </div>
+
                     <ul class="project-meta">
+                        {% if portfolio.service_advt_bool == True %}
                         <li>
-                            <h6 class="project-meta-title">Strategy</h6>
-                            <p>Brand Strategy, UX Strategy</p>
+                            <h6 class="project-meta-title">Advertising</h6>
+                            <p>{{portfolio.service_advt}} </p>
                         </li>
+                        {% endif %}
+                        {% if portfolio.service_bi_bool == True %}
                         <li>
-                            <h6 class="project-meta-title">Design</h6>
-                            <p>UI/UX Design, Art Direction</p>
+                            <h6 class="project-meta-title">Brand Identity</h6>
+                            <p>{{portfolio.service_bi}}</p>
                         </li>
+                        {% endif %}
+                        {% if portfolio.service_digital_bool == True %}
                         <li>
-                            <h6 class="project-meta-title">Client</h6>
-                            <p>Envato</p>
+                            <h6 class="project-meta-title">Digital</h6>
+                            <p>{{portfolio.service_digital}} </p>
                         </li>
+                        {% endif %}
                     </ul>
-                    <a href="https://1.envato.market/5Q25j" class="btn btn-link" target="_blank">
-                        Open Project                            
+                    <a class="btn btn-link" target="_blank">
+                        Scroll Down                            
                         <i class="ion-right ion">
                             <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
@@ -157,6 +166,7 @@
         </div>
     </div>
 </div>
+
 <div class="page-container ">
     <div class="project-page-custom-content">
         <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1577184047146 vc_row-has-fill">
@@ -168,9 +178,7 @@
                             <div class="wpb_column vc_column_container vc_col-sm-6">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
-                                        <div class="ohio-heading-sc heading text-left"
-                                            id="ohio-custom-6001bcf6cc3d0" 
-                                            >
+                                        <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001bcf6cc3d0">
                                             <p class="subtitle">
                                                 Let’s collaborate		
                                             </p>
@@ -185,13 +193,9 @@
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
                                         <div class="vc_empty_space  clb__spacer vc_hidden-xs"   style="height: 40px"><span class="vc_empty_space_inner"></span></div>
-                                        <div class="ohio-button-sc btn-wrap text-right" 
-                                            id="ohio-custom-6001bcf6cc72c"
-                                            >
-                                            <a href="../../contact-us-ver4/index.html" 
-                                                class="btn  clb__alignment_reset">
-                                            <span class="text">
-                                            Contact Us		</span>
+                                        <div class="ohio-button-sc btn-wrap text-right" id="ohio-custom-6001bcf6cc72c">
+                                            <a href="{% url 'contact' %}" class="btn  clb__alignment_reset">
+                                            <span class="text"> Contact Us </span>
                                             <i class="ion-right ion ion-md-arrow-forward"></i>
                                             </a>
                                         </div>
@@ -205,10 +209,8 @@
                             <div class="wpb_column vc_column_container vc_col-sm-6">
                                 <div class="vc_column-inner">
                                     <div class="wpb_wrapper">
-                                        <div class="ohio-text-sc " 
-                                            id="ohio-custom-6001bcf6cd14d" 
-                                            >
-                                            <p>We&#8217;re <strong>a team of creatives</strong> who are excited about unique ideas and help fin-tech companies to <strong>create amazing identity</strong> by crafting top-notch UI/UX.</p>
+                                        <div class="ohio-text-sc" id="ohio-custom-6001bcf6cd14d">
+                                            <p> A hub that wishes to serve you the best awaits your arrival! Got a project for us? </p>
                                         </div>
                                     </div>
                                 </div>
@@ -227,82 +229,72 @@
         <div class="vc_row-full-width vc_clearfix"></div>
     </div>
 </div>
-<div class="clb-back-link vc_hidden-md vc_hidden-sm vc_hidden-xs">
-    <a href="../../index.html" class="btn-round btn-round-light">
-        <i class="ion-left ion">
-            <svg class="arrow-icon arrow-icon-back" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
-            </svg>
-        </i>
-    </a>
-    <span class="clb-back-link-caption">
-    Back    </span>
-</div>
+
+
+<!-- Next -->
+{% if next_portfolio or prev_portfolio %}
 <div class="sticky-nav">
+    {% if next_portfolio %}
     <div class="sticky-nav-image"
-        style="background-image: url({% static 'front/images/oh__img95.jpg' %});"		>
+        style="background-image: url({% if next_portfolio.image1 %}{{next_portfolio.image1.url}}{% endif %});">
     </div>
+    {% elif prev_portfolio %}
+    <div class="sticky-nav-image"
+        style="background-image: url({% if prev_portfolio.image1 %}{{prev_portfolio.image1.url}}{% endif %});">
+    </div>
+    {% endif %}
     <div class="sticky-nav-holder">
         <div class="sticky-nav_item">
             <h6 class="heading-sm">
-                Next Project			
+                {% if next_portfolio %}
+                Next Portfolio
+                {% elif prev_portfolio %}
+                Previous Portfolio
+                {% endif %}
             </h6>
             <div class="nav-holder">
-                <a href="../statistics-mobile-app/index.html" class="btn-round btn-round-small btn-round-light dark-mode-reset">
-                    <i class="ion">
+
+                {% if prev_portfolio %}
+                <a href="{% url 'portfolio_detail' portfolio_name_slug=prev_portfolio.client_name_slug %}" class="btn-round btn-round-small btn-round-light dark-mode-reset">
+					<i class="ion">
                         <svg class="arrow-icon arrow-icon-back" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"></path>
                         </svg>
                     </i>
-                </a>
-                <a href="../fitness-lifestyle-mobile-app/index.html" class="btn-round btn-round-small btn-round-light dark-mode-reset">
+				</a>
+                {% endif %}
+
+                {% if next_portfolio %}
+                <a href="{% url 'portfolio_detail' portfolio_name_slug=next_portfolio.client_name_slug %}" class="btn-round btn-round-small btn-round-light dark-mode-reset">
                     <i class="ion">
                         <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"/>
                         </svg>
                     </i>
                 </a>
+                {% endif %}
+
             </div>
         </div>
-        <a href="../fitness-lifestyle-mobile-app/index.html">
+
+        {% if next_portfolio %}
+        <a href="{% url 'portfolio_detail' portfolio_name_slug=next_portfolio.client_name_slug %}">
             <h5 class="sticky-nav_heading">
-                Fitness Lifestyle Mobile App			
+                {{next_portfolio.client_name | title}}		
             </h5>
         </a>
+        {% elif prev_portfolio %}
+        <a href="{% url 'portfolio_detail' portfolio_name_slug=prev_portfolio.client_name_slug %}">
+            <h5 class="sticky-nav_heading">
+                {{prev_portfolio.client_name | title}}		
+            </h5>
+        </a>
+        {% endif %}
     </div>
 </div>
-<div class="portfolio-comments clb__light_section">
-    <div class="comments-container">
-        <div class="page-container">
-            <div class="vc_row">
-                <div class="vc_col-lg-12">
-                    <div id="comments" class="comments-area  no-comments">
-                        <div id="respond" class="comment-respond">
-                            <h3 id="reply-title" class="comment-reply-title"><span class="heading-md title text-left">Post a comment</span> <small><a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Click here to cancel reply</a></small></h3>
-                            <form action="https://ohio.clbthemes.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-                                <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
-                                <div class="input-group">
-                                    <div class="input-wrap">
-                                        <div class="col-4 input-block"><label for="author" class="field-label">Your Name</label><input id="author" name="author"  type="text" value="" aria-required='true' /></div>
-                                        <div  class="col-4 input-block"><label for="email" class="field-label">Your Email</label><input id="email" name="email"  type="text" value="" aria-required='true' /></div>
-                                        <div  class="col-4 input-block"><label for="url" class="field-label">Your Website</label><input id="url" name="url" type="text"  value="" /></div>
-                                    </div>
-                                </div>
-                                <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-                                <label for="comment" class="field-label">Leave a Reply</label>
-                                <textarea id="comment"  name="comment" cols="45" rows="8" aria-required="true"></textarea>
-                                <p class="form-submit"><button name="submit" type="submit" id="submit" class="btn submit-comment btn-loading-disabled submit" value="Post Comment" >Post Comment</button> <input type='hidden' name='comment_post_ID' value='19298' id='comment_post_ID' />
-                                    <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-                                </p>
-                            </form>
-                        </div>
-                        <!-- #respond -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% endif %}
+
+
 
 {% endblock %}
 
@@ -314,9 +306,6 @@
 
 {% block footerblock  %}
 
-<a class="search-global btn-round btn-round-light fixed btn-round-light vc_hidden-md vc_hidden-sm vc_hidden-xs" tabindex="1" data-nav-search="true">
-    <i class="icon ion ion-md-search brand-color-hover-i"></i>
-    </a>
     <style type="text/css">#ohio-custom-6001bcf6cc3d0 p.subtitle{text-transform:uppercase;}#ohio-custom-6001bcf6cd14d,#ohio-custom-6001bcf6cd14d > *{font-size:17px;line-height:28px;}</style>
     <!-- Instagram Feed JS -->
     <script type="text/javascript">

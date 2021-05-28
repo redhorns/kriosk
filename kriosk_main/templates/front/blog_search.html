@@ -222,12 +222,12 @@
                     <div class=" vc_col-lg-6 vc_col-md-6 vc_col-xs-12 grid-item ohio-card-wrapper blog-post-masonry masonry-block"  data-lazy-item="" data-lazy-scope="posts">
                         <div class="blog-grid blog-grid-type-2 metro-style hover-scale-img" >
                             <figure class="blog-grid-image">
-                                <a data-cursor-class="cursor-link" class="" href="../../creativo-para-jovenes-a-designers-ui-ux-complete-checklist/index.html">
+                                <a data-cursor-class="cursor-link" class="" href="{% url 'blog_detail' blog_slug=blog.title_slug %}">
                                     <div class="blog-metro-image parallax"  data-ohio-bg-image="{% if blog.image1 %}{{blog.image1.url}}{% endif %}"></div>
                                 </a>
                                 <div class="blog-grid-meta">
                                     <div class="meta-holder">
-                                        <img alt='Colabrio' src='{% static "front/images/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy'/>                    
+                                        <img alt='Colabrio' src='{% static "front/images/image/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy'/>                    
                                         <div class="author-attributes">
                                             <div class="author">Posted by <b>Kriosk Creata</b></div>
                                             <span class="date">{{blog.date}}</span>
@@ -238,15 +238,15 @@
                             <div class="blog-grid-content text-left">
                                 <div class="post-details">
                                     <div class="category-holder">
-                                        <a class="category" href="../../category/personal/index.html">{% if blog.fk %}{{blog.fk.name | title}}{% endif %}</a>
+                                        <a class="category" href="{% if blog.fk %}{% url 'blog_filter' section_pk=blog.fk.pk %}{% else %}#{% endif %}">{% if blog.fk %}{{blog.fk.name | title}}{% else %}None{% endif %}</a>
                                     </div>
                                     <span class="post-meta-estimate">{{blog.read_duration}} min read</span>
                                 </div>
                                 <h3 class="blog-grid-headline">
-                                    <a href="../../creativo-para-jovenes-a-designers-ui-ux-complete-checklist/index.html">{{blog.title}}</a>
+                                    <a href="{% url 'blog_detail' blog_slug=blog.title_slug %}">{{blog.title}}</a>
                                 </h3>
                                 <p>{{blog.intro | truncatechars:120}}</p>
-                                <a href="../../creativo-para-jovenes-a-designers-ui-ux-complete-checklist/index.html" class="btn btn-link brand-color-hover">
+                                <a href="{% url 'blog_detail' blog_slug=blog.title_slug %}" class="btn btn-link brand-color-hover">
                                     Read More                
                                     <i class="ion-right ion">
                                         <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -300,9 +300,7 @@
 
 {% block footerblock  %}
 
-<a class="search-global btn-round btn-round-light fixed btn-round-light vc_hidden-md vc_hidden-sm vc_hidden-xs" tabindex="1" data-nav-search="true">
-    <i class="icon ion ion-md-search brand-color-hover-i"></i>
-    </a>
+
     <style type="text/css"></style>
     <!-- Instagram Feed JS -->
     <script type="text/javascript">

@@ -28,17 +28,6 @@
                         </div>
                     </div>
 
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-success alert-dismissible fade show text-center" role="alert" style="margin: 10px 20px;">
-                                <strong>Voila, </strong> {{message}}
-                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-
                     <div class="widget-content widget-content-area">
                         <div class="table-responsive">
 
@@ -59,7 +48,7 @@
                                         
                                         <td class="text-center"><b style="font-size: 18px">{{service.service_name}}</b></td>
 
-                                        <td class="text-center">{{service.service_list}}</td>
+                                        <td class="text-center">{{service.service_inner}}</td>
                                        
                                        
                                         <td class="text-center">

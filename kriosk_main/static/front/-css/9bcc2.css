@@ -23388,7 +23388,7 @@ button.mfp-arrow-right:after {
 
 .qodef-fullscreen-menu>ul>li>a {
 	font-weight: 500;
-	font-size: 76px;
+	font-size: 56px;
 	letter-spacing: -.01em;
 	font-family: Yantramanav;
 	color: #fff
@@ -23408,13 +23408,13 @@ button.mfp-arrow-right:after {
 
 .qodef-fullscreen-menu>ul>li>a .qodef-menu-item-text {
 	position: relative;
-	line-height: 1em
+	line-height: 0.6em
 }
 
 .qodef-fullscreen-menu>ul>li>a .qodef-menu-item-text:before {
 	content: '';
 	position: absolute;
-	bottom: 22px;
+	bottom: 12px;
 	height: 1px;
 	width: calc(100% - 1px);
 	background: currentColor;
@@ -23447,13 +23447,13 @@ button.mfp-arrow-right:after {
 	text-transform: uppercase;
 	line-height: 1em;
 	position: relative;
-	top: -22px;
+	top: -10px;
 	left: 4px
 }
 
 @media only screen and (max-width:680px) {
 	.qodef-fullscreen-menu>ul>li>a .sub_description {
-		top: -15px
+		top: -10px
 	}
 }
 
@@ -24915,7 +24915,7 @@ body:not(.qodef-drop-down-second--full-width) .qodef-header-navigation ul li.qod
 .qodef-header--light:not(.qodef-fullscreen-menu--opened) #qodef-page-header-inner .qodef-opener-icon.qodef-source--icon-pack,
 .qodef-header--light:not(.qodef-fullscreen-menu--opened) #qodef-page-header-inner .qodef-opener-icon.qodef-source--predefined,
 .qodef-header--light:not(.qodef-fullscreen-menu--opened) #qodef-page-header-inner .qodef-opener-icon.qodef-source--svg-path {
-	color: #fff!important
+	color: grey !important
 }
 
 .qodef-header--dark:not(.qodef-fullscreen-menu--opened) #qodef-page-header-inner .qodef-opener-icon.qodef-source--icon-pack,

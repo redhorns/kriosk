@@ -27,4 +27,16 @@ urlpatterns = [
     url(r'^panel/service/sub/edit/(?P<service_pk>\d+)/(?P<service_sub_pk>\d+)/$', views.back_service_sub_edit, name='back_service_sub_edit'),
     url(r'^panel/service/sub/delete/(?P<service_pk>\d+)/(?P<service_sub_pk>\d+)/$', views.back_service_sub_delete, name='back_service_sub_delete'),
 
+    # page (meta)
+    url(r'^panel/page/list/$', views.page_list, name='page_list'),
+    url(r'^panel/page/add/$', views.page_add, name='page_add'),
+    url(r'^panel/page/edit/(?P<page_pk>\d+)/$', views.page_edit, name='page_edit'),
+
+    # team
+    url(r'^panel/team/list/$', views.team_list, name='team_list'),
+    url(r'^panel/team/add/$', views.team_add, name='team_add'),
+    url(r'^panel/team/edit/(?P<team_pk>\d+)/$', views.team_edit, name='team_edit'),
+    url(r'^panel/team/delete/(?P<team_pk>\d+)/$', views.team_delete, name='team_delete'),
+
+
 ]

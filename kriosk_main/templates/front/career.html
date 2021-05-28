@@ -99,8 +99,10 @@
                         <div class="vc_col-lg-12 animated-holder">
                             <div class="post-meta">
                             </div>
-                            <h1 class="clb-title">Contact: Corporate</h1>
-                            <div class="clb-post-meta">Leave us a little info, and we’ll be in touch. <br> <a class="btn btn-small btn-brand" href="#">Send Us an Email</a></div>
+                            <h1 class="clb-title">Careers</h1>
+                            <div class="clb-post-meta">Leave us a messsage, and we’ll be in touch<br> 
+                                <a class="btn btn-small btn-brand" href="#email-us">Interested ?</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -114,14 +116,26 @@
                     <div class="breadcrumbs-holder">
                         <div class="vc_col-md-12">
                             <ol class="breadcrumbs-slug" itemscope itemtype="http://schema.org/BreadcrumbList">
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <a itemprop="item" href="../index.html"><span itemprop="name">Home</span></a><i class="ion ion-ios-arrow-forward"></i>
+                                <li itemprop="itemListElement" itemscope>
+                                    <a itemprop="item" href="{% url 'home' %}">
+                                        <span itemprop="name">Home</span>
+                                    </a>
+                                    <i class="ion ion-ios-arrow-forward"></i>
                                     <meta itemprop="position" content="1" />
                                 </li>
-                                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                                    <span itemprop="name" class="active">Contact: Corporate</span>
+                                <li itemprop="itemListElement" itemscope>
+                                    <span itemprop="name" class="active">Careers</span>
                                     <meta itemprop="position" content="2" />
                                 </li>
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                                            <i class="ion ion-ios-arrow-forward"></i>
+                                            <span itemprop="name" class="active" style="background-color: blanchedalmond;">Message : {{message}}</span>
+                                            <meta itemprop="position" content="2" />
+                                        </li>
+                                    {% endfor %}
+                                {% endif %}
                             </ol>
                         </div>
                     </div>
@@ -129,76 +143,70 @@
             </div>
         </div>
 
-        <div class="page-container">
+        <div class="page-container" id="email-us">
             <div id="primary" class="content-area">
                 <div class="page-content ">
                     <main id="main" class="site-main">
                         <article id="post-19458" class="post-19458 page type-page status-publish hentry">
                             <div class="entry-content">
-                                <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1577183070871 vc_row-has-fill">
-                                    
-                                    <!-- Heading -->
-                                    <div class="wpb_column vc_column_container vc_col-sm-3">
-                                        <div class="vc_column-inner">
-                                            <div class="wpb_wrapper">
-                                                <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
-                                                <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001bc300b5ce">
-                                                    <h3 class="title">
-                                                        Graphics Designer
-                                                    </h3>
-                                                </div>
-                                                <div class="ohio-text-sc " id="ohio-custom-6001bc300b69a">
-                                                    <p>Positions : 1</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Detail -->
-                                    <div class="wpb_column vc_column_container vc_col-sm-5">
-                                        <div class="vc_column-inner">
-                                            <div class="wpb_wrapper">
-                                                <div class="vc_empty_space  clb__spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
-                                                <div class="ohio-heading-sc heading text-left"
-                                                    id="ohio-custom-6001bc300b937" 
-                                                    >
-                                                    <h5 class="title">
-                                                        Barcelona	
-                                                    </h5>
-                                                </div>
-                                                <div class="ohio-text-sc " 
-                                                    id="ohio-custom-6001bc300ba22" 
-                                                    >
-                                                    <p>365 Gran Via de Corts Catalanes, BA<br />
-                                                        <strong>Call us: +3.409.120.6705</strong>
-                                                    </p>
-                                                    <p>Assistance hours: Monday &#8211; Friday<br />
-                                                        6 am to 8 pm EST (toll free)
-                                                    </p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
 
-                                <!-- work inquiries -->
+                                {% for career in career %}
+                                    {% if career.status == True %}
+                                    <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1577183070871 vc_row-has-fill">
+                                        
+                                        <!-- Heading -->
+                                        <div class="wpb_column vc_column_container vc_col-lg-5 vc_col-sm-12">
+                                            <div class="vc_column-inner">
+                                                <div class="wpb_wrapper">
+                                                    <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
+                                                    <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001bc300b5ce">
+                                                        <h3 class="title">
+                                                            {{forloop.counter}}<span style="font-size: 35px; color: #DD2241;">.</span>&nbsp; {{career.position_name | title}}
+                                                        </h3>
+                                                    </div>
+                                                    <div class="ohio-text-sc " id="ohio-custom-6001bc300b69a">
+                                                        <p>Positions : {{career.position_number}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Detail -->
+                                        <div class="wpb_column vc_column_container vc_col-lg-6 vc_col-sm-12">
+                                            <div class="vc_column-inner">
+                                                <div class="wpb_wrapper">
+                                                    <div class="vc_empty_space  clb__spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
+                                                    <div class="ohio-heading-sc heading text-left" >
+                                                        <h5 class="title">
+                                                            Requirements	
+                                                        </h5>
+                                                    </div>
+                                                    <div class="ohio-text-sc">
+                                                        {{career.position_requirement | safe}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="vc_row-full-width vc_clearfix"></div>
+                                    {% endif %}
+                                {% endfor %}
+
+                                <!-- apply -->
                                 <div class="vc_row-full-width vc_clearfix"></div>
                                 <div data-vc-full-width="true" data-vc-full-width-init="false" class="vc_row wpb_row vc_row-fluid vc_custom_1577183082064 vc_row-has-fill">
                                     <div class="wpb_column vc_column_container vc_col-sm-3">
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
                                                 <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
-                                                <div class="ohio-heading-sc heading text-left"
-                                                    id="ohio-custom-6001bc300c4ce" 
-                                                    >
+                                                <div class="ohio-heading-sc heading text-left" id="ohio-custom-6001bc300c4ce">
                                                     <h3 class="title">
-                                                        Work inquiries	
+                                                        Get in Touch	
                                                     </h3>
                                                 </div>
-                                                <div class="ohio-text-sc " 
-                                                    id="ohio-custom-6001bc300c58c" 
-                                                    >
-                                                    <p>Fill in this form or <a href="#"><strong>send us an e-mail</strong></a> with your inquiry.</p>
+                                                <div class="ohio-text-sc " id="ohio-custom-6001bc300c58c">
+                                                    <p>Fill in this form or send us an e-mail at <a><strong>info@krioskcreata.com</strong></a>.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -207,71 +215,71 @@
                                         <div class="vc_column-inner">
                                             <div class="wpb_wrapper">
                                                 <div class="vc_empty_space  clb__section_spacer"   style="height: 90px"><span class="vc_empty_space_inner"></span></div>
-                                                <div class="ohio-contact-from-sc contact-form  text-left"
-                                                    id="ohio-custom-6001bc300c89e" 
-                                                    >
-                                                    <div role="form" class="wpcf7" id="wpcf7-f18-p19458-o1" lang="en-US" dir="ltr">
+                                                <div class="ohio-contact-from-sc contact-form  text-left" id="ohio-custom-6001bc300c89e">
+                                                    <div role="form" lang="en-US" dir="ltr">
                                                         <div class="screen-reader-response">
                                                             <p role="status" aria-live="polite" aria-atomic="true"></p>
                                                             <ul></ul>
                                                         </div>
-                                                        <form action="https://ohio.clbthemes.com/contact-us-ver3/#wpcf7-f18-p19458-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
-                                                            <div style="display: none;">
-                                                                <input type="hidden" name="_wpcf7" value="18" />
-                                                                <input type="hidden" name="_wpcf7_version" value="5.3.2" />
-                                                                <input type="hidden" name="_wpcf7_locale" value="en_US" />
-                                                                <input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f18-p19458-o1" />
-                                                                <input type="hidden" name="_wpcf7_container_post" value="19458" />
-                                                                <input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-                                                            </div>
+                                                        
+                                                        <form action="{% url 'applicants_list' %}" method="post" class="wpcf7-form init" enctype="multipart/form-data">
+                                                            {% csrf_token %}
+
                                                             <div class="vc_col-lg-4 vc_col-sm-12">
-                                                                <label> Name (required)<br />
-                                                                <span class="wpcf7-form-control-wrap your-name"><input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name" /></span> </label>
+                                                                <label> Name <span style="color: red;">*</span><br />
+                                                                    <span class="wpcf7-form-control-wrap your-name">
+                                                                        <input type="text" name="name" id="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name" required/>
+                                                                    </span> 
+                                                                </label>
                                                             </div>
+
                                                             <div class="vc_col-lg-4 vc_col-sm-12">
-                                                                <label> Company (required)<br />
-                                                                <span class="wpcf7-form-control-wrap company-name"><input type="text" name="company-name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your company name" /></span> </label>
+                                                                <label> Email <span style="color: red;">*</span><br />
+                                                                    <span class="wpcf7-form-control-wrap your-email">
+                                                                        <input type="email" name="email" id="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your working email" required/>
+                                                                    </span>
+                                                                </label>
                                                             </div>
+
                                                             <div class="vc_col-lg-4 vc_col-sm-12">
-                                                                <label> Email (required)<br />
-                                                                <span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Your working email" /></span> </label>
+                                                                <label> Phone <span style="color: red;">*</span><br />
+                                                                    <span class="wpcf7-form-control-wrap your-phone">
+                                                                        <input type="tel" name="phone" id="phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="i.e. +91 8511881646" required/>
+                                                                    </span>
+                                                                </label>
                                                             </div>
-                                                            <div class="vc_col-lg-4 vc_col-sm-12">
-                                                                <label> Phone (optional)<br />
-                                                                <span class="wpcf7-form-control-wrap your-phone"><input type="tel" name="your-phone" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="Your actual phone number" /></span> </label>
-                                                            </div>
-                                                            <div class="vc_col-lg-4 vc_col-sm-12">
-                                                                <label> Subject (optional)<br />
-                                                                <span class="wpcf7-form-control-wrap subject"><input type="text" name="subject" value="" size="40" class="wpcf7-form-control wpcf7-text" aria-invalid="false" placeholder="Choose a subject" /></span> </label>
-                                                            </div>
+
                                                             <div class="vc_col-lg-4 vc_col-sm-12">
                                                                 <label>
-                                                                    Choose a Budget (USD)<br />
+                                                                    Choose a Position <span style="color: red;">*</span><br />
                                                                     <span class="wpcf7-form-control-wrap menu-18">
-                                                                        <select name="menu-18" class="wpcf7-form-control wpcf7-select" aria-invalid="false">
-                                                                            <option value="Less than 5K">Less than 5K</option>
-                                                                            <option value="5K - 10K">5K - 10K</option>
-                                                                            <option value="Over 10K">Over 10K</option>
-                                                                            <option value="Please advice">Please advice</option>
+                                                                        <select name="position" id="position" class="wpcf7-form-control wpcf7-select" aria-invalid="false" required>
+                                                                            {% for career_all in career_all %}
+                                                                                {% if career_all.status == True %}
+                                                                                    <option value="{{career_all.position_name | title}}">{{career_all.position_name | title}} (OPEN)</option>
+                                                                                {% else %}
+                                                                                    <option value="{{career_all.position_name | title}}">{{career_all.position_name | title}}</option>
+                                                                                {% endif %}
+                                                                            {% endfor %}
                                                                         </select>
                                                                     </span>
                                                                 </label>
                                                             </div>
-                                                            <div class="vc_col-lg-12 vc_col-sm-12">
-                                                                <label> Project details<br />
-                                                                <span class="wpcf7-form-control-wrap message"><textarea name="message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="Brief project details"></textarea></span> </label>
+                                                            <div class="vc_col-lg-1 vc_col-sm-12"></div>
+                                                            <div class="vc_col-lg-4 vc_col-sm-12">
+                                                                <label> Resume <span style="color: red;">*</span> (Less than 1 MB)<br />
+                                                                    <span class="wpcf7-form-control-wrap your-phone">
+                                                                        <input type="file" name="resume" id="resume" style="margin-top: 5%;" required/>
+                                                                    </span>
+                                                                </label>
                                                             </div>
+                                                            
                                                             <div class="vc_col-lg-12 vc_col-sm-12">
-                                                                <input type="submit" value="Get a Quote" class="wpcf7-form-control wpcf7-submit" />
+                                                                <input type="submit" value="SUBMIT" class="wpcf7-form-control wpcf7-submit" />
                                                             </div>
-                                                            <div class="wpcf7-response-output" aria-hidden="true"></div>
+                                                            
                                                         </form>
-                                                    </div>
-                                                    <div class="hidden" data-contact-btn="true">
-                                                        <button class="btn ">
-                                                        <span class="btn-load"></span>
-                                                        <span class="text"></span>
-                                                        </button>
+
                                                     </div>
                                                 </div>
                                             </div>
@@ -308,9 +316,6 @@
 
     {% block footerblock  %}
 
-    <a class="search-global btn-round btn-round-light fixed btn-round-light vc_hidden-md vc_hidden-sm vc_hidden-xs" tabindex="1" data-nav-search="true">
-        <i class="icon ion ion-md-search brand-color-hover-i"></i>
-        </a>
         <style type="text/css">#ohio-custom-6001bc300b5ce h3{font-size:32px;}#ohio-custom-6001bc300c4ce h3{font-size:32px;}#ohio-custom-6001bc300c89e [class*=vc_col-lg],#ohio-custom-6001bc300c89e .subscribe-form{padding: 10px;}#ohio-custom-6001bc300c89e form.wpcf7-form,#ohio-custom-6001bc300c89e .subscribe-form .btn{margin: -10px;}#ohio-custom-6001bc300e07f h3{color:#ffffff;}#ohio-custom-6001bc300e07f p.subtitle{color:#6a696c;text-transform:uppercase;}#ohio-custom-6001bc300e3e3 .btn{ background-color:#d90a2c;border-color:#d90a2c;}#ohio-custom-6001bc300e3e3 .btn:hover{border-color:#d90a2c;}#ohio-custom-6001bc300ef11,#ohio-custom-6001bc300ef11 > *{color:#ffffff;}</style>
         <!-- Instagram Feed JS -->
         <script type="text/javascript">

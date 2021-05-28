@@ -91,7 +91,7 @@
         <div class="parallax-bg bg-image"></div>
         <div class="parallax-content"></div>
     </div>
-    <div class="clb-page-headline-holder">
+    <div class="clb-page-headline-holder" style="padding-top: 0px !important;">
         <div class="page-container">
 
             <div class="vc_row">
@@ -102,6 +102,15 @@
                     <div class="clb-post-meta">Read our gorgeous blogs !<br>
                         <a target="_blank" href="#" class="btn btn-small">Get Started <i class="ion-left ion ion-md-arrow-forward"></i></a>
                     </div>
+                    {% if messages %}
+                        {% for message in messages %}
+                        <div style="margin-top: 25px;">
+                            <i class="ion ion-ios-arrow-forward"></i>
+                            <span itemprop="name" class="active" style="background-color: blanchedalmond;">Message : {{message}}</span>
+                            <meta itemprop="position" content="2" />
+                        </div>
+                        {% endfor %}
+                    {% endif %}
                 </div>
             </div>
 
@@ -139,7 +148,7 @@
             </div>
 
             <!-- Result Count -->
-            <div class="filter-holder">
+            <!-- <div class="filter-holder">
                 <div class="vc_col-md-12">
                     <div class="mbl-overlay">
                         <div class="mbl-overlay-bg"></div>
@@ -167,7 +176,7 @@
                     <span class="text">Filter</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
         </div>
     </div>
@@ -209,7 +218,7 @@
                         </a>, who can help you with customization of content.
                         <br><br>
                         <a target="_blank" href="{% url 'contact' %}" rel="noopener">
-                            <img src="{% static 'front/images/blog.jpg' %}" alt="nature_image">
+                            <img src="{% static 'front/images/image/blog.jpg' %}" alt="nature_image">
                         </a>
                     </div>
                 </section>
@@ -234,7 +243,7 @@
                                 </a>
                                 <div class="blog-grid-meta">
                                     <div class="meta-holder">
-                                        <img alt='Colabrio' src='{% static "front/images/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy'/>                    
+                                        <img alt='Colabrio' src='{% static "front/images/image/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy'/>                    
                                         <div class="author-attributes">
                                             <div class="author">Posted by <b>Kriosk Creata</b></div>
                                             <span class="date">{{blog.date}}</span>
@@ -297,6 +306,52 @@
     </div>
 </div>
 
+<div class="comments-container">
+    <div class="page-container">
+        <div class="vc_row">
+            <div class="vc_col-lg-12">
+                <div id="comments" class="comments-area ">
+                    <!-- .comment-list -->
+                    <div id="respond" class="comment-respond">
+                        <h3 id="reply-title" class="comment-reply-title">
+                            <span class="heading-md title text-left">Subscribe to our Newsletter</span>
+                            <small>
+                                <a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Click here to cancel reply</a>
+                            </small>
+                        </h3>
+
+                        <form action="{% url 'newsletter' %}" method="post" id="commentform" class="comment-form" novalidate>
+                            {% csrf_token %}
+                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> &nbsp; Required fields are marked <span class="required">*</span></p>
+                            <div class="input-group">
+                                <div class="input-wrap">
+
+                                    <div class="col-6 input-block">
+                                        <label for="author" class="field-label">Your Name</label>
+                                        <input id="name" name="name"  type="text" placeholder="Enter Your Name" aria-required='true' />
+                                    </div>
+                                    <div  class="col-6 input-block">
+                                        <label for="email" class="field-label">Your Email</label>
+                                        <input id="email" name="email"  type="text" placeholder="Enter Your email" aria-required='true' />
+                                    </div>
+
+                                    <p class="form-submit"><button name="submit" type="submit" id="submit" class="btn submit-comment btn-loading-disabled submit" value="Post Comment" >Subscribe</button> <input type='hidden' name='comment_post_ID' value='20876' id='comment_post_ID' />
+                                        <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                                    </p>
+                                    
+                                </div>
+                            </div>
+                            
+                        </form>
+
+                    </div>
+                    <!-- #respond -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 
 
@@ -307,9 +362,7 @@
 
 {% block footerblock  %}
 
-<a class="search-global btn-round btn-round-light fixed btn-round-light vc_hidden-md vc_hidden-sm vc_hidden-xs" tabindex="1" data-nav-search="true">
-    <i class="icon ion ion-md-search brand-color-hover-i"></i>
-    </a>
+
     <style type="text/css"></style>
     <!-- Instagram Feed JS -->
     <script type="text/javascript">

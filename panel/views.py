@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from panel.models import Portfolio, Portfolio_Image, Home, Service_Sub, Service
+from panel.models import Portfolio, Portfolio_Image, Home, Service_Sub, Service, Page_Handler, Our_Team
 from django.contrib import messages
 import datetime
 from django.utils.safestring import mark_safe
@@ -8,10 +8,12 @@ import json
 from django.core.files.storage import default_storage
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from itertools import chain
+from django.contrib.auth.decorators import login_required
 
 
 # Home
 
+@login_required
 def home_back(request) :
 
     if request.method == 'POST' :
@@ -57,6 +59,7 @@ def home_back(request) :
 
 
 
+@login_required
 def home_edit_back(request, home_pk) :
 
     if request.method == 'POST':
@@ -115,6 +118,7 @@ def home_edit_back(request, home_pk) :
 
 
 
+@login_required
 def home_delete_back(request, home_pk) :
 
     try :
@@ -143,6 +147,7 @@ def home_delete_back(request, home_pk) :
 
 # Portfolio
 
+@login_required
 def back_portfolio_list(request) :
 
     portfolio = Portfolio.objects.all().order_by('index')
@@ -156,39 +161,55 @@ def back_portfolio_list(request) :
 
 
 
+@login_required
 def back_portfolio_add(request) :
 
     if request.method == 'POST' :
 
         client_name = request.POST.get('client_name', '')
         client_tagline = request.POST.get('client_tagline', '')
-        services = request.POST.get('services', '')
         detail = request.POST.get('detail1', '')
+
+        service_advt_bool = request.POST.get('service_advt_bool', False)
+        service_advt = request.POST.get('service_advt', '')
+        service_bi_bool = request.POST.get('service_bi_bool', False)
+        service_bi = request.POST.get('service_bi', '')
+        service_digital_bool = request.POST.get('service_digital_bool', False)
+        service_digital = request.POST.get('service_digital', '')
 
         image1 = request.FILES.get('image1', None)
         image_wide = request.POST.get('image_wide', None)
 
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
+
         # auto indexing
-        last = Portfolio.objects.last()
-        if last :
-            index = last.index + 1
-        else :
-            index = 1
+        index = Portfolio.objects.all().count() + 1
 
         # checking : image is wide
-        if image_wide :
-            image_wide = image_wide
-        else :
-            image_wide = False
+        # if image_wide :
+        #     image_wide = image_wide
+        # else :
+        #     image_wide = False
 
         portfolio = Portfolio(
             index = index,
             client_name = client_name,
             client_tagline = client_tagline,
-            services = services,
             detail = detail,
+
+            service_advt_bool = service_advt_bool,
+            service_advt = service_advt,
+            service_bi_bool = service_bi_bool,
+            service_bi = service_bi,
+            service_digital_bool = service_digital_bool,
+            service_digital = service_digital,
+
             image1 = image1,
             image_wide = image_wide,
+
+            meta_title = meta_title,
+            meta_description = meta_description,
         )
 
         portfolio.save()
@@ -204,6 +225,7 @@ def back_portfolio_add(request) :
 
 
 
+@login_required
 def back_portfolio_edit(request, portfolio_pk) :
 
     if request.method == 'POST' :
@@ -224,11 +246,20 @@ def back_portfolio_edit(request, portfolio_pk) :
         index = request.POST.get('index', None)
         client_name = request.POST.get('client_name', '')
         client_tagline = request.POST.get('client_tagline', '')
-        services = request.POST.get('services', '')
         detail = request.POST.get('detail1', '')
+
+        service_advt_bool = request.POST.get('service_advt_bool', False)
+        service_advt = request.POST.get('service_advt', '')
+        service_bi_bool = request.POST.get('service_bi_bool', False)
+        service_bi = request.POST.get('service_bi', '')
+        service_digital_bool = request.POST.get('service_digital_bool', False)
+        service_digital = request.POST.get('service_digital', '')
 
         image1 = request.FILES.get('image1', None)
         image_wide = request.POST.get('image_wide', False)
+
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
 
 
 
@@ -241,9 +272,19 @@ def back_portfolio_edit(request, portfolio_pk) :
         portfolio.index = index
         portfolio.client_name = client_name
         portfolio.client_tagline = client_tagline
-        portfolio.services = services
         portfolio.detail = detail
+
+        portfolio.service_advt_bool = service_advt_bool
+        portfolio.service_advt = service_advt
+        portfolio.service_bi_bool = service_bi_bool
+        portfolio.service_bi = service_bi
+        portfolio.service_digital_bool = service_digital_bool
+        portfolio.service_digital = service_digital
+
         portfolio.image_wide = image_wide
+
+        portfolio. meta_title = meta_title
+        portfolio.meta_description = meta_description
 
         portfolio.save()
 
@@ -276,6 +317,7 @@ def back_portfolio_edit(request, portfolio_pk) :
 
 #< --- [SUB] --- >
 
+@login_required
 def back_portfolio_image_list(request, portfolio_pk) :
 
     if request.method == 'POST' :
@@ -319,10 +361,9 @@ def back_portfolio_image_list(request, portfolio_pk) :
 
         return redirect('error_back')
 
-    portfolio_image = Portfolio_Image.objects.filter(fk=portfolio)
+    portfolio_image = Portfolio_Image.objects.filter(fk=portfolio).order_by('index')
 
     index_next = portfolio_image.count() + 1
-
 
     send = {
         'portfolio_image': portfolio_image,
@@ -334,6 +375,7 @@ def back_portfolio_image_list(request, portfolio_pk) :
 
 
 
+@login_required
 def back_portfolio_image_edit(request, portfolio_pk, portfolio_image_pk) :
 
     if request.method == 'POST' :
@@ -391,6 +433,7 @@ def back_portfolio_image_edit(request, portfolio_pk, portfolio_image_pk) :
 
 
 
+@login_required
 def back_portfolio_image_delete(request, portfolio_pk, portfolio_image_pk) :
 
     try :
@@ -417,9 +460,10 @@ def back_portfolio_image_delete(request, portfolio_pk, portfolio_image_pk) :
 
 # Service
 
+@login_required
 def back_service_list(request) :
 
-    service = Service.objects.all()
+    service = Service.objects.all().order_by('index')
 
 
     send = {
@@ -430,19 +474,23 @@ def back_service_list(request) :
 
 
 
+@login_required
 def back_service_add(request) :
 
     if request.method == 'POST' :
 
         service_name = request.POST.get('service_name', '')
+        service_inner = request.POST.get('service_inner', '')
         service_intro = request.POST.get('service_intro', '')
         service_detail = request.POST.get('service_detail', '')
-        service_list = request.POST.get('service_list', '')
 
         image1 = request.FILES.get('image1', None)
         image2 = request.FILES.get('image2', None)
         image_before = request.FILES.get('image_before', None)
         image_after = request.FILES.get('image_after', None)
+
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
 
         service_count = Service.objects.all().count()
 
@@ -451,13 +499,15 @@ def back_service_add(request) :
         service = Service(
             index = index,
             service_name = service_name,
+            service_inner = service_inner,
             service_intro = service_intro,
             service_detail = service_detail,
-            service_list = service_list,
             image1 = image1,
             image2 = image2,
             image_before = image_before,
             image_after = image_after,
+            meta_title = meta_title,
+            meta_description = meta_description,
 
         )
 
@@ -474,6 +524,7 @@ def back_service_add(request) :
 
 
 
+@login_required
 def back_service_edit(request, service_pk) :
 
     if request.method == 'POST' :
@@ -491,14 +542,17 @@ def back_service_edit(request, service_pk) :
 
         index = request.POST.get('index', None)
         service_name = request.POST.get('service_name', '')
+        service_inner = request.POST.get('service_inner', '')
         service_intro = request.POST.get('service_intro', '')
         service_detail = request.POST.get('service_detail', '')
-        service_list = request.POST.get('service_list', '')
 
         image1 = request.FILES.get('image1', None)
         image2 = request.FILES.get('image2', None)
         image_before = request.FILES.get('image_before', None)
         image_after = request.FILES.get('image_after', None)
+
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
 
 
         if image1 != None :
@@ -525,9 +579,12 @@ def back_service_edit(request, service_pk) :
 
         service.index = index
         service.service_name = service_name
+        service.service_inner = service_inner
         service.service_intro = service_intro
         service.service_detail = service_detail
-        service.service_list = service_list
+
+        service.meta_title = meta_title
+        service.meta_description = meta_description
 
         service.save()
 
@@ -557,6 +614,7 @@ def back_service_edit(request, service_pk) :
 
 
 
+@login_required
 def back_service_delete(request, service_pk) :
 
     try :
@@ -579,6 +637,7 @@ def back_service_delete(request, service_pk) :
 
 #< --- [SUB] --- >
 
+@login_required
 def back_service_sub_list(request, service_pk) :
 
     if request.method == 'POST' :
@@ -629,7 +688,7 @@ def back_service_sub_list(request, service_pk) :
         return redirect('error_back')
 
 
-    service_sub = Service_Sub.objects.filter(fk=service)
+    service_sub = Service_Sub.objects.filter(fk=service).order_by('index')
 
     index_next = service_sub.count() + 1
 
@@ -643,6 +702,7 @@ def back_service_sub_list(request, service_pk) :
 
 
 
+@login_required
 def back_service_sub_edit(request, service_pk, service_sub_pk) :
 
     if request.method == 'POST' :
@@ -704,6 +764,7 @@ def back_service_sub_edit(request, service_pk, service_sub_pk) :
 
 
 
+@login_required
 def back_service_sub_delete(request, service_pk, service_sub_pk) :
 
     try :
@@ -726,4 +787,222 @@ def back_service_sub_delete(request, service_pk, service_sub_pk) :
 
 
 
+# Meta
 
+@login_required
+def page_list(request) :
+
+    page_handler = Page_Handler.objects.all()
+
+    send = {
+        'page_handler' : page_handler,
+    }
+
+    return render(request, 'back/panel/page_list.html', send)
+
+
+
+@login_required
+def page_add(request) :
+
+    if request.method == 'POST' :
+
+        page_name = request.POST.get('page_name', '')
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
+
+        page_handler = Page_Handler (
+            page_name = page_name,
+            meta_title = meta_title,
+            meta_description = meta_description,
+        )
+
+        page_handler.save()
+
+        msg = "New Page has been added to Page-List"
+        messages.success(request, msg)
+
+        return redirect('page_list')
+
+    return render(request, 'back/panel/page_add.html')
+
+
+
+@login_required
+def page_edit(request, page_pk) :
+
+    if request.method == 'POST' :
+
+        try :
+            page_handler = Page_Handler.objects.get(pk=page_pk)
+        except :
+            page_handler = None
+
+        if not page_handler :
+            msg = "Page not found, try going back, refresh the page and try again !"
+            messages.success(request, msg)
+
+            return redirect('error_back')
+
+        page_name = request.POST.get('page_name', '')
+        meta_title = request.POST.get('meta_title', '')
+        meta_description = request.POST.get('meta_description', '')
+
+        page_handler.page_name = page_name
+        page_handler.meta_title = meta_title
+        page_handler.meta_description = meta_description
+
+        page_handler.save()
+
+        msg = "Edits made to Page has been committed successfully !"
+        messages.success(request, msg)
+
+        return redirect('page_list')
+
+
+    try :
+        page_handler = Page_Handler.objects.get(pk=page_pk)
+    except :
+        page_handler = None
+
+    if not page_handler :
+        msg = "Page not found, try going back, refresh the page and try again !"
+        messages.success(request, msg)
+
+        return redirect('error_back')
+
+    send = {
+        'page_handler': page_handler,
+    }
+
+    return render(request, 'back/panel/page_edit.html', send)
+
+
+# team
+
+@login_required
+def team_list(request) :
+
+    our_team = Our_Team.objects.all().order_by('index')
+
+    send = {
+        'our_team': our_team,
+    }
+
+    return render(request, 'back/panel/our_team_list.html', send)
+
+
+
+@login_required
+def team_add(request) :
+
+    if request.method == 'POST':
+
+        index = request.POST.get('index', '')
+        name = request.POST.get('name', '')
+        intro = request.POST.get('intro', '')
+        desg = request.POST.get('desg', '')
+
+        image1 = request.FILES.get('image1', None)
+        our_team = Our_Team(
+            index = index,
+            name = name,
+            intro = intro,
+            desg = desg,
+            image1 = image1,
+        )
+
+        our_team.save()
+
+        msg = "New member has been successfully added to the team !"
+        messages.success(request, msg)
+
+        return redirect('team_list')
+
+
+    return render(request, 'back/panel/our_team_add.html')
+
+
+
+@login_required
+def team_edit(request, team_pk) :
+
+    if request.method == 'POST' :
+
+        try :
+            our_team = Our_Team.objects.get(pk=team_pk)
+        except :
+            our_team = None
+
+        if not our_team :
+            msg = "Page not found, try going back, refresh the page and try again !"
+            messages.success(request, msg)
+
+            return redirect('error_back')
+
+        index = request.POST.get('index', '')
+        name = request.POST.get('name', '')
+        intro = request.POST.get('intro', '')
+        desg = request.POST.get('desg', '')
+
+        image1 = request.FILES.get('image1', None)
+
+        if image1 != None :
+            if our_team.image1 :
+                default_storage.delete(our_team.image1.path)
+            our_team.image1 = image1
+
+        our_team.index = index
+        our_team.name = name
+        our_team.intro = intro
+        our_team.desg = desg
+
+        our_team.save()
+
+        msg = "Changes made to Team Member has been committed successfully !"
+        messages.success(request, msg)
+        
+
+        return redirect('team_list')
+
+
+    
+    try :
+        our_team = Our_Team.objects.get(pk=team_pk)
+    except :
+        our_team = None
+
+    if not our_team :
+        msg = "Page not found, try going back, refresh the page and try again !"
+        messages.success(request, msg)
+
+        return redirect('error_back')
+
+    send = {
+        'our_team': our_team,
+    }
+
+    return render(request, 'back/panel/our_team_edit.html', send)
+
+
+
+@login_required
+def team_delete(request, team_pk) :
+
+    try :
+        our_team = Our_Team.objects.get(pk=team_pk)
+    except :
+        our_team = None
+
+    if not our_team :
+        msg = "Page not found, try going back, refresh the page and try again !"
+        messages.success(request, msg)
+
+        return redirect('error_back')
+
+    our_team.delete()
+
+    msg = "Team Member has been removed successfully !"
+    messages.success(request, msg)
+
+    return redirect('team_list')

@@ -9,20 +9,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
         <link rel="profile" href="https://gmpg.org/xfn/11">
-        <title>Interactive Portfolio &#8211; Malgré</title>
-        <script data-cfasync="false" data-pagespeed-no-defer>
-            var gtm4wp_datalayer_name = "dataLayer";
-            var dataLayer = dataLayer || [];
-        </script>
+        <title>{% if page_handler %}{{page_handler.meta_title}}{% endif %}</title>
+        <meta name="description" content="{% if page_handler %}{{page_handler.meta_description}}{% endif %}">
+
+        
+        <link rel="icon" href="{% static 'front/images/image/circle.png' %}" />
+
         <link rel='dns-prefetch' href='http://export.qodethemes.com/' />
         <link rel='dns-prefetch' href='http://fonts.googleapis.com/' />
         <link rel='dns-prefetch' href='http://s.w.org/' />
-        <link rel="alternate" type="application/rss+xml" title="Malgré &raquo; Feed" href="../feed/index.html" />
-        <link rel="alternate" type="application/rss+xml" title="Malgré &raquo; Comments Feed" href="../comments/feed/index.html" />
-        <script type="text/javascript">
-            window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/malgre.qodeinteractive.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=5.5.3"}};
-            !function(e,a,t){var r,n,o,i,p=a.createElement("canvas"),s=p.getContext&&p.getContext("2d");function c(e,t){var a=String.fromCharCode;s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,e),0,0);var r=p.toDataURL();return s.clearRect(0,0,p.width,p.height),s.fillText(a.apply(this,t),0,0),r===p.toDataURL()}function l(e){if(!s||!s.fillText)return!1;switch(s.textBaseline="top",s.font="600 32px Arial",e){case"flag":return!c([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])&&(!c([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!c([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]));case"emoji":return!c([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}function d(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(i=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},o=0;o<i.length;o++)t.supports[i[o]]=l(i[o]),t.supports.everything=t.supports.everything&&t.supports[i[o]],"flag"!==i[o]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[i[o]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(r=t.source||{}).concatemoji?d(r.concatemoji):r.wpemoji&&r.twemoji&&(d(r.twemoji),d(r.wpemoji)))}(window,document,window._wpemojiSettings);
-        </script>
+
         <style type="text/css">
             img.wp-smiley,
             img.emoji {
@@ -106,11 +102,8 @@
         <noscript>
             <style>.woocommerce-product-gallery{ opacity: 1 !important; }</style>
         </noscript>
-        <meta name="generator" content="Powered by Slider Revolution 6.2.22 - responsive, Mobile-Friendly Slider Plugin for WordPress with comfortable drag and drop interface." />
-        <link rel="icon" href="{% static 'front/-images/cropped-malgre-favicon-img-32x32.png' %}" sizes="32x32" />
-        <link rel="icon" href="{% static 'front/-images/cropped-malgre-favicon-img-192x192.png' %}" sizes="192x192" />
-        <link rel="apple-touch-icon" href="{% static 'front/-images/cropped-malgre-favicon-img-180x180.png' %}" />
-        <meta name="msapplication-TileImage" content="https://malgre.qodeinteractive.com/wp-content/uploads/2020/08/cropped-malgre-favicon-img-270x270.png" />
+
+        
         <script type="text/javascript">function setREVStartSize(e){
             //window.requestAnimationFrame(function() {				 
             	window.RSIW = window.RSIW===undefined ? window.innerWidth : window.RSIW;	
@@ -163,9 +156,10 @@
     <body class="page-template page-template-page-full-width page-template-page-full-width-php page page-id-1088 theme-malgre qode-framework-1.1.2 woocommerce-no-js qodef-back-to-top--enabled qodef-back-to-top--  qodef-content-grid-1200 qodef-reduce-wide-menu qodef-header--light qodef-header--minimal qodef-header-appearance--sticky qodef-mobile-header--minimal qodef-drop-down-second--full-width qodef-drop-down-second--animate-height qodef-portfolio-hide-back-to-link malgre-core-1.0.1 malgre-1.0 qodef-search--fullscreen elementor-default elementor-kit-14 elementor-page elementor-page-1088" itemscope itemtype="https://schema.org/WebPage">
         <div id="qodef-page-wrapper" class="">
 
+            <!-- header / desktop -->
             <header id="qodef-page-header">
                 <div id="qodef-page-header-inner">
-                    <a itemprop="url" class="qodef-header-logo-link qodef-height--set" href="../index.html" style="height:44px" rel="home">
+                    <a itemprop="url" class="qodef-header-logo-link qodef-height--set" href="{% url 'home' %}" style="height:44px" rel="home">
                         <img width="200" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
                         <img width="200" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--light" alt="logo light" itemprop="image" />
                     </a>
@@ -210,9 +204,10 @@
                 </div> -->
 			</header>
 			
+            <!-- header / mobile -->
             <header id="qodef-page-mobile-header">
                 <div id="qodef-page-mobile-header-inner">
-                    <a itemprop="url" class="qodef-mobile-header-logo-link" href="../index.html" style="height:32px" rel="home">
+                    <a itemprop="url" class="qodef-mobile-header-logo-link" href="{% url 'home' %}" style="height:32px" rel="home">
                         <img width="80" height="88" src="{% static 'front/images/image/logo-R.png' %}" class="qodef-header-logo-image qodef--main" alt="logo main" itemprop="image" /> 
                     </a>
                     <a href="javascript:void(0)" class="qodef-opener-icon qodef-m qodef-source--svg-path qodef-fullscreen-menu-opener">
@@ -278,7 +273,7 @@
 
                                                                                     {% for home in home %}
                                                                                     <div class="qodef-image-url-holder-inner">
-                                                                                        <div class="qodef-image-url" style="background-image: url({% if home.image1 %}{{home.image1.url}}{% endif %})"></div>
+                                                                                        <div class="qodef-image-url" style="background-image: url({% if home.image1 %}{{home.image1.url}}{% endif %})" loading="lazy"></div>
                                                                                     </div>
                                                                                     {% endfor %}
 
@@ -300,7 +295,8 @@
                     </main>
                 </div>
 			</div>
-			
+
+
             <div class="qodef-fullscreen-search-holder qodef-m">
                 <a href="javascript:void(0)" class="qodef-opener-icon qodef-m qodef-source--icon-pack qodef-m-close">
                 <span class="qodef-m-icon qodef--open">
@@ -386,57 +382,82 @@
                                 <li id="menu-item-3630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-3630">
                                     <a href="{% url 'home' %}">
                                         <span class="qodef-menu-item-text">Home</span><br />
-                                        <span class="sub_description">no place like home</span>
+                                        <span class="sub_description">No need to knock, walk in</span>
                                     </a>
                                 </li>
 
                                 <li id="menu-item-3634" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3634">
                                     <a href="{% url 'about' %}">
                                         <span class="qodef-menu-item-text">About Us</span><br />
-                                        <span class="sub_description">Learn more about us</span>
+                                        <span class="sub_description">Wish to know our story?</span>
                                     </a>
                                 </li>
 
-                                <li id="menu-item-3635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3635 qodef-menu-item--narrow">
-                                    <a href="../portfolio/standard/index.html">
+                                <!-- <li id="menu-item-3635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3635 qodef-menu-item--narrow">
+                                    <a href="{% url 'service_list' %}">
                                         <span class="qodef-menu-item-text">Services</span><br />
-                                        <span class="sub_description">What can we do for you</span>
+                                        <span class="sub_description">The key to our Pandora box</span>
                                     </a>
                                     <div class="qodef-drop-down-second">
                                         <div class="qodef-drop-down-second-inner">
                                             <ul class="sub-menu">
+                                                {% for services in services %}
                                                 <li id="menu-item-5629" class="menu-item menu-item-type-post_type menu-item-object-portfolio-item menu-item-5629">
-                                                    <a href="../portfolio-item/promote-your-work/index.html">
-                                                        <span class="qodef-menu-item-text">Branding</span>
+                                                    <a href="{% url 'service_detail' service_name_slug=services.service_name_slug %}">
+                                                        <span class="qodef-menu-item-text">{{services.service_name | title}}</span>
                                                     </a>
                                                 </li>
-                                                <li id="menu-item-5630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630">
-                                                    <a href="../get-in-touch/index.html">
-                                                        <span class="qodef-menu-item-text">Web Dev</span>
-                                                    </a>
-                                                </li>
-                                                <li id="menu-item-5630" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5630">
-                                                    <a href="../get-in-touch/index.html">
-                                                        <span class="qodef-menu-item-text">Promotions</span>
-                                                    </a>
-                                                </li>
+                                                {% endfor %}
                                             </ul>
                                         </div>
                                     </div>
-                                </li>
+                                </li> -->
 
-                                <li id="menu-item-3638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3638">
-                                    <a href="../landing/index.html">
-                                        <span class="qodef-menu-item-text">Work</span><br />
-                                        <span class="sub_description">Be ready to be mesmerised</span>
+                                <li id="menu-item-3635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3635">
+                                    <a href="{% url 'service_list' %}">
+                                        <span class="qodef-menu-item-text">Services</span><br />
+                                        <span class="sub_description"> The key to our Pandora box </span>
                                     </a>
                                 </li>
 
                                 <li id="menu-item-3638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3638">
-                                    <a href="../landing/index.html">
-                                        <span class="qodef-menu-item-text">Contact</span><br />
-                                        <span class="sub_description">We are right here</span>
+                                    <a href="{% url 'portfolio_list' %}">
+                                        <span class="qodef-menu-item-text">Portfolio</span><br />
+                                        <span class="sub_description"> This is not our first time </span>
                                     </a>
+                                </li>
+
+                                <li id="menu-item-3638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3638">
+                                    <a href="{% url 'blog' %}">
+                                        <span class="qodef-menu-item-text">Blog</span><br />
+                                        <span class="sub_description">We summon the reader in you</span>
+                                    </a>
+                                </li>
+
+                                <li id="menu-item-3635" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3635 qodef-menu-item--narrow">
+                                    <a href="{% url 'contact' %}">
+                                        <span class="qodef-menu-item-text">Get in Touch</span><br />
+                                        <span class="sub_description">Paint your questions for us!</span>
+                                    </a>
+                                    <div class="qodef-drop-down-second">
+                                        <div class="qodef-drop-down-second-inner">
+                                            <ul class="sub-menu">
+
+                                                <li id="menu-item-5629" class="menu-item menu-item-type-post_type menu-item-object-portfolio-item menu-item-5629">
+                                                    <a href="{% url 'contact' %}">
+                                                        <span class="qodef-menu-item-text">Contact Us</span>
+                                                    </a>
+                                                </li>
+
+                                                <li id="menu-item-5629" class="menu-item menu-item-type-post_type menu-item-object-portfolio-item menu-item-5629">
+                                                    <a href="{% url 'career' %}">
+                                                        <span class="qodef-menu-item-text">Career</span>
+                                                    </a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </li>
                             
                             </ul>
@@ -516,5 +537,5 @@
         </script>
         <script src="{% static 'front/-js/6f5e3.js' %}"></script>
     </body>
-    <!-- Mirrored from malgre.qodeinteractive.com/interactive-portfolio/ by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 18 Jan 2021 05:51:55 GMT -->
+   
 </html>

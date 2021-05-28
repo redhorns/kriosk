@@ -90,10 +90,11 @@
     <!-- title image/ bg image -->
     <style>
         .clb-page-headline .bg-image{
-            background-image:url('{% if blog_detail.image1 %}{{blog_detail.image1.url}}{% endif %}');
+            background-image:url('{% if blog_detail.image1 %}{{blog_detail.image1.url}}{% endif %}'), linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2));
             background-size:cover;
             background-position:center top;
             background-repeat:no-repeat;
+            background-blend-mode: overlay;
         }
     </style>
 
@@ -122,11 +123,11 @@
                         </div>
                         <span class="post-meta-estimate">{{blog_detail.read_duration}} min read</span>
                     </div>
-                    <h1 class="clb-title">{{blog_detail.title}}.</h1>
+                    <h1 class="clb-title">{{blog_detail.title}}</h1>
                     <div class="clb-post-meta">
                         <ul class="clb-post-holder">
                             <li class="clb-post-meta-item">
-                                <img alt='Colabrio' src='{% static "front/images/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy' />                
+                                <img alt='Colabrio' src='{% static "front/images/image/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy' />           
                             </li>
                             <li class="clb-post-meta-item">
                                 <div class="prefix">Author</div>
@@ -161,7 +162,7 @@
                             <meta itemprop="position" content="2" />
                         </li>
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <span itemprop="name" class="active">{{blog_detail.title}}.</span>
+                            <span itemprop="name" class="active">{{blog_detail.title}}</span>
                             <meta itemprop="position" content="3" />
                         </li>
                     </ol>
@@ -188,7 +189,14 @@
                             <!-- tags -->
                             <div class="entry-footer">
                                 <div class="entry-footer-tags">
-                                    <div class="tags-holder"><span class="tags-caption">Tagged with: </span><span class="tag"><a href="../tag/blog/index.html" rel="tag">Blog</a></span><span class="tag"><a href="../tag/creative/index.html" rel="tag">Creative</a></span><span class="tag"><a href="../tag/portfolio/index.html" rel="tag">Portfolio</a></span><span class="tag"><a href="../tag/theme/index.html" rel="tag">Theme</a></span><span class="tag"><a href="../tag/wordpress/index.html" rel="tag">WordPress</a></span></div>
+                                    <div class="tags-holder">
+                                        <span class="tags-caption">Tagged with: </span>
+                                        
+                                        {% for tag in tags %}
+                                        <span class="tag"><a rel="tag">{{tag}}</a></span>
+                                        {% endfor %}
+
+                                    </div>
                                 </div>
                             </div>
 
@@ -196,7 +204,7 @@
 
                         <!-- bottom author -->
                         <div class="widget widget_ohio_widget_about_author">
-                            <img src="{% static 'front/images/circle.png' %}" alt="Author avatar" />				
+                            <img src="{% static 'front/images/image/circle.png' %}" alt="Author avatar" />				
                             <div class="content">
                                 <div class="info">
                                     <div class="info-wrap">
@@ -206,7 +214,15 @@
                                 </div>
                                 Modern and cutting-edge approach for creating digital brands, services, and websites.					
                                 <div class="socialbar outline small">
-                                    <a href="https://www.facebook.com/" class="social brand-color-hover"><i class="fab fa-facebook-f"></i></a><a href="https://www.facebook.com/" class="social brand-color-hover"><i class="fab fa-instagram"></i></a><a href="https://www.facebook.com/" class="social brand-color-hover"><i class="fab fa-pinterest"></i></a>					
+                                    <a href="https://www.facebook.com/kriosk.creata.9" class="social brand-color-hover" target="_blank">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                    <a href="https://www.instagram.com/krioskcreata/" class="social brand-color-hover" target="_blank">
+                                        <i class="fab fa-instagram"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/company/kriosk-creata" class="social brand-color-hover" target="_blank">
+                                        <i class="fab fa-linkedin"></i>
+                                    </a>					
                                 </div>
                             </div>
                         </div>
@@ -219,24 +235,55 @@
     <div class="post-share" data-ohio-content-scroll="#scroll-content">
         <div class="clb-share-bar" data-blog-share="true">
             <div class="socialbar small flat">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fohio.clbthemes.com%2Ffullscreen-post%2F" class="facebook"><i class="fab fa-facebook-f"></i></a><a href="http://pinterest.com/pin/create/button/?url=https%3A%2F%2Fohio.clbthemes.com%2Ffullscreen-post%2F&amp;description=Creativo+Para+J%C3%B3venes%3A+a+Designer%E2%80%99s+UI%2FUX+Complete+Checklist." class="pinterest"><i class="fab fa-pinterest"></i></a><a href="https://twitter.com/intent/tweet?text=Creativo+Para+J%C3%B3venes%3A+a+Designer%E2%80%99s+UI%2FUX+Complete+Checklist.,+https%3A%2F%2Fohio.clbthemes.com%2Ffullscreen-post%2F" class="twitter"><i class="fab fa-twitter"></i></a>			
+                <a href="https://www.facebook.com/kriosk.creata.9" class="facebook" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/krioskcreata/" class="pinterest" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/company/kriosk-creata" class="twitter" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>			
             </div>
         </div>
     </div>
 </div>
 
 <!-- next post -->
-{% if next_blog %}
+{% if next_blog or prev_blog %}
 <div class="sticky-nav">
-    <div class="sticky-nav-image" style="background-image: url({% if next_blog.image1 %}{{next_blog.image1.url}}{% endif %});">
+    {% if next_blog %}
+    <div class="sticky-nav-image" 
+        style="background-image: url({% if next_blog.image1 %}{{next_blog.image1.url}}{% endif %});">
     </div>
+    {% elif prev_blog %}
+    <div class="sticky-nav-image" 
+        style="background-image: url({% if prev_blog.image1 %}{{prev_blog.image1.url}}{% endif %});">
+    </div>
+    {% endif %}
+    
     <div class="sticky-nav-holder">
         <div class="sticky-nav_item">
             <h6 class="heading-sm">
-                Next Post			
+                {% if next_blog %}
+                    Next Blog
+                {% elif prev_blog %}
+                    Previous Blog
+                {% endif %}
             </h6>
             <div class="nav-holder">
 
+                {% if prev_blog %}
+                <a href="{% url 'blog_detail' blog_slug=prev_blog.title_slug %}" class="btn-round btn-round-small btn-round-light dark-mode-reset">
+					<i class="ion">
+                        <svg class="arrow-icon arrow-icon-back" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 8H15M15 8L8.5 1.5M15 8L8.5 14.5" stroke-width="2" stroke-linejoin="round"></path>
+                        </svg>
+                    </i>
+				</a>
+                {% endif %}
+
+                {% if next_blog %}
                 <a href="{% url 'blog_detail' blog_slug=next_blog.title_slug %}" class="btn-round btn-round-small btn-round-light dark-mode-reset">
                     <i class="ion">
                         <svg class="arrow-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -244,14 +291,24 @@
                         </svg>
                     </i>
                 </a>
+                {% endif %}
 
             </div>
         </div>
+
+        {% if next_blog %}
         <a href="{% url 'blog_detail' blog_slug=next_blog.title_slug %}">
             <h5 class="sticky-nav_heading ">
                 {{next_blog.title}}		
             </h5>
         </a>
+        {% elif prev_blog %}
+        <a href="{% url 'blog_detail' blog_slug=prev_blog.title_slug %}">
+            <h5 class="sticky-nav_heading ">
+                {{prev_blog.title}}		
+            </h5>
+        </a>
+        {% endif %}
     </div>
 </div>
 {% endif %}
@@ -276,7 +333,7 @@
                             </a>
                             <div class="blog-grid-meta">
                                 <div class="meta-holder">
-                                    <img alt='kriosk_logo' src='{% static "front/images/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy'/>                    
+                                    <img alt='kriosk_logo' src='{% static "front/images/image/circle.png" %}' class='avatar avatar-50 photo author-avatar' height='50' width='50' loading='lazy'/>                    
                                     <div class="author-attributes">
                                         <div class="author">Posted by <b>Kriosk Creata</b></div>
                                         <span class="date">{{similar_blog.date}}</span>
@@ -327,23 +384,33 @@
                             <span class="heading-md title text-left">Subscribe to our Newsletter</span>
                             <small>
                                 <a rel="nofollow" id="cancel-comment-reply-link" href="index.html#respond" style="display:none;">Click here to cancel reply</a>
-                            </small></h3>
-                        <form action="https://ohio.clbthemes.com/wp-comments-post.php" method="post" id="commentform" class="comment-form" novalidate>
-                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> Required fields are marked <span class="required">*</span></p>
+                            </small>
+                        </h3>
+
+                        <form action="{% url 'newsletter' %}" method="post" id="commentform" class="comment-form" novalidate>
+                            {% csrf_token %}
+                            <p class="comment-notes"><span id="email-notes">Your email address will not be published.</span> &nbsp; Required fields are marked <span class="required">*</span></p>
                             <div class="input-group">
                                 <div class="input-wrap">
-                                    <div class="col-4 input-block"><label for="author" class="field-label">Your Name</label><input id="author" name="author"  type="text" value="" aria-required='true' /></div>
-                                    <div  class="col-4 input-block"><label for="email" class="field-label">Your Email</label><input id="email" name="email"  type="text" value="" aria-required='true' /></div>
-                                    <div  class="col-4 input-block"><label for="url" class="field-label">Your Website</label><input id="url" name="url" type="text"  value="" /></div>
+
+                                    <div class="col-6 input-block">
+                                        <label for="author" class="field-label">Your Name</label>
+                                        <input id="name" name="name"  type="text" placeholder="Enter Your Name" aria-required='true' />
+                                    </div>
+                                    <div  class="col-6 input-block">
+                                        <label for="email" class="field-label">Your Email</label>
+                                        <input id="email" name="email"  type="text" placeholder="Enter Your email" aria-required='true' />
+                                    </div>
+
+                                    <p class="form-submit"><button name="submit" type="submit" id="submit" class="btn submit-comment btn-loading-disabled submit" value="Post Comment" >Subscribe</button> <input type='hidden' name='comment_post_ID' value='20876' id='comment_post_ID' />
+                                        <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+                                    </p>
+                                    
                                 </div>
                             </div>
-                            <p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /> <label for="wp-comment-cookies-consent">Save my name, email, and website in this browser for the next time I comment.</label></p>
-                            <label for="comment" class="field-label">Leave a Reply</label>
-                            <textarea id="comment"  name="comment" cols="45" rows="8" aria-required="true"></textarea>
-                            <p class="form-submit"><button name="submit" type="submit" id="submit" class="btn submit-comment btn-loading-disabled submit" value="Post Comment" >Post Comment</button> <input type='hidden' name='comment_post_ID' value='20876' id='comment_post_ID' />
-                                <input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-                            </p>
+                            
                         </form>
+
                     </div>
                     <!-- #respond -->
                 </div>
@@ -363,9 +430,6 @@
 
 {% block footerblock  %}
 
-<a class="search-global btn-round btn-round-light fixed btn-round-light vc_hidden-md vc_hidden-sm vc_hidden-xs" tabindex="1" data-nav-search="true">
-    <i class="icon ion ion-md-search brand-color-hover-i"></i>
-    </a>
     <style type="text/css"></style>
     <!-- Instagram Feed JS -->
     <script type="text/javascript">

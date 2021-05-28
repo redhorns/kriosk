@@ -31,6 +31,9 @@ class Blog(models.Model) :
     tag = models.TextField(null=True, blank=True)
     image1 = models.ImageField(upload_to='blog', null=True, blank=True)
 
+    meta_title = models.CharField(max_length=150, null=True, blank=True)
+    meta_description = models.TextField(null=True, blank=True)
+
     def save(self, *args, **kwargs):
         self.title_slug = slugify(self.title)
         super(Blog, self).save(*args, **kwargs)
@@ -42,6 +45,9 @@ class Blog(models.Model) :
             return "{} ({})".format(self.title, self.fk.name)
         else :
             return "{} (None)".format(self.title)
+
+    def get_absolute_url(self) :
+        return f'/blog/{self.title_slug}/'
 
 @receiver(post_delete, sender=Blog)
 def submission_delete(sender, instance, **kwargs) :
