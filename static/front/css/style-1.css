@@ -3039,12 +3039,24 @@ p.text-small {
 	position: relative;
 }
 
-.ohio-slider-sc>.slider:not(.nav-offset):not(.nav-inset)>.clb-slider-nav-btn {
+@media(max-width: 768px){
+	.ohio-slider-sc>.slider:not(.nav-offset):not(.nav-inset)>.clb-slider-nav-btn {
+		padding: 0;
+		margin-bottom: -25px !important;
+		-webkit-transform: translateY(13px);
+		-ms-transform: translateY(13px);
+		transform: translateY(13px);
+	}
+}
 
-	padding-top: 25px !important;
-	-webkit-transform: translateY(13px);
-	-ms-transform: translateY(13px);
-	transform: translateY(13px);
+@media(min-width: 768px){
+	.ohio-slider-sc>.slider:not(.nav-offset):not(.nav-inset)>.clb-slider-nav-btn {
+		padding: 0;
+		margin-bottom: -55px !important;
+		-webkit-transform: translateY(13px);
+		-ms-transform: translateY(13px);
+		transform: translateY(13px);
+	}
 }
 
 .ohio-slider-sc .clb-slider-stage {

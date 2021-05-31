@@ -23388,7 +23388,7 @@ button.mfp-arrow-right:after {
 
 .qodef-fullscreen-menu>ul>li>a {
 	font-weight: 500;
-	font-size: 76px;
+	font-size: 56px;
 	letter-spacing: -.01em;
 	font-family: Yantramanav;
 	color: #fff
@@ -23414,7 +23414,7 @@ button.mfp-arrow-right:after {
 .qodef-fullscreen-menu>ul>li>a .qodef-menu-item-text:before {
 	content: '';
 	position: absolute;
-	bottom: 22px;
+	bottom: 12px;
 	height: 1px;
 	width: calc(100% - 1px);
 	background: currentColor;
